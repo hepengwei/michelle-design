@@ -1,0 +1,65 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: #333;
+  font-family: "SourceHanSansCN-Light";
+  font-weight: 300;
+  #root {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+}
+p {
+  margin-bottom: 0;
+}
+div {
+  box-sizing: border-box;
+  font-family: "SourceHanSansCN-Light";
+  font-weight: 300;
+}
+span {
+  font-family: "SourceHanSansCN-Light";
+  font-weight: 300;
+}
+
+.app_container {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@font-face {
+  font-family: SourceHanSansCN-Light;
+  src: url("../public/fonts/SourceHanSansCN-Light.otf");
+}
+
+@font-face {
+  font-family: SourceHanSansCN-Regular;
+  src: url("../public/fonts/SourceHanSansCN-Regular.otf");
+}
+
+@font-face {
+  font-family: SourceHanSansCN-Medium;
+  src: url("../public/fonts/SourceHanSansCN-Medium.otf");
+}
+
+@font-face {
+  font-family: SourceHanSansCN-Bold;
+  src: url("../public/fonts/SourceHanSansCN-Bold.otf");
+}
+
+@font-face {
+  font-family: HarmonyOS_Sans_Thin;
+  src: url("../public/fonts/HarmonyOS_Sans_Thin.ttf");
+}

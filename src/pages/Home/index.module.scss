@@ -1,0 +1,14 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  .container_content {
+    width: 100vw;
+    min-height: 100vh;
+    min-width: 1200px !important;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

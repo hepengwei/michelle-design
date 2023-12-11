@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  $innerCircleSize: 76px;
+  $outerCircleSize: 100px;
+  .content {
+    width: $innerCircleSize;
+    height: $innerCircleSize;
+    border-radius: 50%;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    @mixin circle {
+      content: "";
+      box-sizing: border-box;
+      position: absolute;
+      width: $outerCircleSize;
+      height: $outerCircleSize;
+      border-radius: calc($outerCircleSize / 2);
+      bottom: calc(($outerCircleSize - $innerCircleSize) / -2);
+      left: calc(($outerCircleSize - $innerCircleSize) / -2);
+      margin: auto;
+      border: 6px solid;
+    }
+
+    &::before {
+      @include circle();
+      border-color: #e5eae6;
+      z-index: 1;
+    }
+    .outerCircle {
+      @include circle();
+      border-color: #4b805a;
+      z-index: 2;
+      clip-path: polygon(
+        0 calc($outerCircleSize - var(--height)),
+        $outerCircleSize calc($outerCircleSize - var(--height)),
+        $outerCircleSize $outerCircleSize,
+        0 $outerCircleSize
+      );
+    }
+  }
+  span {
+    font-size: 16px;
+    line-height: 16px;
+    height: 16px;
+    color: #888;
+    margin-top: 18px;
+  }
+}

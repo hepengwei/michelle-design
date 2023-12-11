@@ -1,0 +1,778 @@
+.container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @mixin module {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .content {
+      width: 1200px;
+      height: 100%;
+      display: flex;
+    }
+  }
+
+  $headerHeight: 80px;
+  .header {
+    @include module;
+    height: $headerHeight;
+    min-height: $headerHeight;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid $greenBgColor;
+    z-index: 11;
+    .content {
+      justify-content: space-between;
+      align-items: center;
+      .left {
+        display: flex;
+        align-items: center;
+        img {
+          width: 72px;
+          height: 50px;
+          margin-right: 20px;
+          cursor: pointer;
+        }
+      }
+
+      .right {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        .phoneBox {
+          display: flex;
+          height: 18px;
+          align-items: center;
+          margin-left: 20px;
+          border-left: 1px solid #888888;
+          img {
+            width: 10px;
+            height: 14px;
+            margin: 0 6px 0 10px;
+          }
+        }
+      }
+    }
+  }
+  .banner {
+    @include module;
+    height: 650px;
+    min-height: 650px;
+    background-color: $globalPrimaryColor;
+    margin-top: $headerHeight;
+    .content {
+      justify-content: space-between;
+      align-items: center;
+      .left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+
+        .slogan {
+          width: 483px;
+          height: 92px;
+        }
+
+        .profession {
+          display: flex;
+          align-items: center;
+          margin-top: 110px;
+          img {
+            &:first-of-type {
+              width: 20px;
+              height: 18px;
+              margin-right: 8px;
+            }
+            &:last-of-type {
+              width: 274px;
+              height: 31px;
+            }
+          }
+        }
+
+        .contactInformation {
+          width: 259px;
+          height: 90px;
+          margin-top: 40px;
+          margin-left: 30px;
+        }
+      }
+
+      .imgBox {
+        width: 476px;
+        height: 480px;
+        position: relative;
+
+        $boxShadow: 6px 6px 2px 2px rgba(0, 0, 0, 0.1);
+        .leftImg {
+          position: absolute;
+          width: 120px;
+          height: 430px;
+          top: 25px;
+          left: 0;
+          object-fit: cover;
+          box-shadow: $boxShadow;
+          transition: top;
+          animation: verticalMove 5s infinite;
+        }
+        .middleImg {
+          position: absolute;
+          width: 220px;
+          height: 480px;
+          top: 0;
+          left: 128px;
+          object-fit: cover;
+          box-shadow: $boxShadow;
+        }
+        .rightImg {
+          position: absolute;
+          width: 120px;
+          height: 430px;
+          top: 25px;
+          right: 0;
+          object-fit: cover;
+          box-shadow: $boxShadow;
+          transition: top;
+          animation: verticalMoveReverse 5s infinite;
+        }
+      }
+    }
+  }
+  .skill {
+    @include module;
+    height: 310px;
+    min-height: 310px;
+    .content {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .title {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        img {
+          width: 26px;
+          height: 28px;
+          &:last-of-type {
+            transform: scale(-1, 1);
+          }
+        }
+        span {
+          font-size: 26px;
+          font-family: "SourceHanSansCN-Bold";
+          font-weight: 600;
+          margin: 0 10px;
+        }
+
+        $fontSize: 40px;
+        &::before {
+          content: attr(data-englishtext);
+          position: absolute;
+          width: 410px;
+          height: $fontSize + 4px;
+          top: 2px - $fontSize;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+          font-size: $fontSize;
+          opacity: 0.3;
+          font-family: "HarmonyOS_Sans_Thin";
+          font-weight: 400;
+          background-image: linear-gradient(to bottom, #000000, transparent);
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+        }
+      }
+      .list {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 40px;
+      }
+    }
+  }
+  .eCommerceDesign {
+    @include module;
+    height: 684px;
+    min-height: 684px;
+    background-color: $greenBgColor;
+    .content {
+      flex-direction: column;
+      justify-content: center;
+
+      $boxHeight: 500px;
+      .box {
+        display: flex;
+        justify-content: space-between;
+        height: $boxHeight;
+
+        @mixin itemBox {
+          box-sizing: border-box;
+          position: relative;
+          .topFloor {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            transition: top 0.4s;
+            background-color: #fff;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 3;
+            img {
+              width: 100%;
+              object-fit: cover;
+            }
+            .bottomText {
+              position: absolute;
+              bottom: 20px;
+              left: 10px;
+              width: fit-content;
+              height: 20px;
+              line-height: 20px;
+              font-size: 20px;
+              color: #888888;
+              svg {
+                path {
+                  fill: $globalPrimaryColor;
+                }
+                margin-right: 4px;
+              }
+            }
+            &:hover {
+              .bottomText {
+                color: $globalPrimaryColor;
+              }
+            }
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            width: calc(100% - 40px);
+            height: 16px;
+            left: 20px;
+            bottom: -8px;
+            border-radius: 8px;
+            background-color: #6a9577;
+            transition: bottom 0.4s;
+            z-index: 2;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            width: calc(100% - 80px);
+            height: 16px;
+            left: 40px;
+            bottom: -8px;
+            border-radius: 8px;
+            background-color: #b7cdb6;
+            z-index: 1;
+          }
+          &:hover {
+            .topFloor {
+              top: -8px;
+            }
+            &::before {
+              bottom: 0px;
+            }
+          }
+        }
+
+        $leftBoxWidth: 360px;
+        .left {
+          @include itemBox();
+          width: $leftBoxWidth;
+          height: 100%;
+          .topFloor {
+            img {
+              height: $boxHeight - 80px;
+            }
+          }
+        }
+        .middle {
+          box-sizing: border-box;
+          width: 420px;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .topOrBottom {
+            @include itemBox();
+            width: 100%;
+            height: 235px;
+            img {
+              height: 170px;
+            }
+          }
+        }
+        .right {
+          @include itemBox();
+          width: $leftBoxWidth;
+          height: 100%;
+          img {
+            height: $boxHeight - 80px;
+          }
+        }
+      }
+    }
+  }
+  .graphicDesign {
+    @include module;
+    height: 674px;
+    min-height: 674px;
+    .content {
+      flex-direction: column;
+      justify-content: center;
+
+      $boxHeight: 500px;
+      .box {
+        display: flex;
+        justify-content: space-between;
+        height: $boxHeight;
+
+        .imgBox {
+          position: absolute;
+          top: 30px;
+          bottom: 0px;
+          left: 20px;
+          right: 20px;
+          padding: 10px;
+          z-index: 2;
+          background-color: #fff;
+          box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.1);
+
+          .shadowBox {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            cursor: pointer;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              z-index: 1;
+            }
+            &::after {
+              content: "";
+              position: absolute;
+              width: 100%;
+              height: 20px;
+              bottom: 0;
+              left: 0;
+              background-image: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.6),
+                transparent
+              );
+              z-index: 2;
+            }
+            &:hover {
+              &::after {
+                height: 80px;
+                background-image: linear-gradient(
+                  to top,
+                  rgba(0, 0, 0, 0.8),
+                  transparent
+                );
+              }
+            }
+          }
+
+          span {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            font-size: 20px;
+            color: #ffffff;
+            text-align: center;
+            font-family: "SourceHanSansCN-Regular";
+            font-weight: 300;
+            z-index: 3;
+          }
+        }
+
+        .pin {
+          position: absolute;
+          top: 10px;
+          left: 30px;
+          z-index: 3;
+        }
+
+        $leftBoxWidth: 500px;
+        $rightBoxWidth: calc(1200px - $leftBoxWidth - 30px);
+        .left {
+          width: $leftBoxWidth;
+          height: 100%;
+          position: relative;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 190px;
+            left: 0;
+            right: 0;
+            background-color: $globalPrimaryColor;
+            opacity: 0.25;
+            clip-path: polygon(
+              0 0,
+              $leftBoxWidth 0,
+              $leftBoxWidth 220px,
+              0 310px
+            );
+            z-index: 1;
+          }
+        }
+        .right {
+          width: $rightBoxWidth;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .top {
+            width: 100%;
+            height: calc(($boxHeight - 20px) / 2);
+            position: relative;
+
+            &::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              bottom: 20px;
+              left: 0;
+              right: 0;
+              background-color: $globalPrimaryColor;
+              opacity: 0.25;
+              clip-path: polygon(
+                0 0,
+                $rightBoxWidth 0,
+                $rightBoxWidth 80px,
+                0 214px
+              );
+              z-index: 1;
+            }
+          }
+          .bottom {
+            width: 100%;
+            height: calc(($boxHeight - 20px) / 2);
+            display: flex;
+            justify-content: space-between;
+            .left {
+              width: calc(50% - 10px);
+              height: 100%;
+              position: relative;
+
+              &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 20px;
+                left: 0;
+                right: 0;
+                background-color: $globalPrimaryColor;
+                opacity: 0.25;
+                clip-path: polygon(
+                  0 0,
+                  $rightBoxWidth 0,
+                  $rightBoxWidth 84px,
+                  0 214px
+                );
+                z-index: 1;
+              }
+            }
+            .right {
+              width: calc(50% - 10px);
+              height: 100%;
+              position: relative;
+
+              &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 94px;
+                left: 0;
+                right: 0;
+                background-color: $globalPrimaryColor;
+                opacity: 0.25;
+                clip-path: polygon(
+                  0 0,
+                  $rightBoxWidth 0,
+                  $rightBoxWidth 20px,
+                  0 146px
+                );
+                z-index: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .uiDesign {
+    @include module;
+    height: 684px;
+    min-height: 684px;
+    position: relative;
+
+    .content {
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      z-index: 2;
+
+      $boxHeight: 527px;
+      .box {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: $boxHeight;
+
+        .itemBox {
+          width: calc((100% - 80px) / 3);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .topBox {
+            width: 100%;
+            height: 470px;
+            cursor: pointer;
+            overflow: visible;
+            position: relative;
+
+            .bottomImgBox {
+              position: absolute;
+              width: 100%;
+              height: calc(100% - 10px);
+              top: 0;
+              left: 0;
+              right: 0;
+              margin: 0 auto;
+              overflow: hidden;
+              z-index: 1;
+              img {
+                width: 100%;
+                height: 470px;
+                object-fit: cover;
+                filter: blur(2px);
+              }
+            }
+
+            .topImgBox {
+              position: absolute;
+              width: 280px;
+              height: calc(100% - 10px);
+              top: 10px;
+              left: 0;
+              right: 0;
+              border-radius: 10px;
+              margin: 0 auto;
+              overflow: hidden;
+              z-index: 2;
+              box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.2);
+              img {
+                position: absolute;
+                width: 380px;
+                height: 470px;
+                top: -10px;
+                left: -50px;
+              }
+            }
+
+            &:hover {
+              .bottomImgBox {
+                box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.2);
+                img {
+                  filter: blur(0px);
+                }
+              }
+              .topImgBox {
+                box-shadow: none;
+              }
+            }
+          }
+          .bottomText {
+            width: fit-content;
+            height: 52px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            color: #ffffff;
+            text-align: center;
+            font-family: "SourceHanSansCN-Regular";
+            font-weight: 400;
+            margin-top: 8px;
+            position: relative;
+            &::after {
+              content: "";
+              position: absolute;
+              width: 100%;
+              height: 2px;
+              left: 0;
+              bottom: 0;
+              min-height: 2px;
+              border-radius: 50%;
+              background-color: #003a10;
+            }
+          }
+        }
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 400px;
+      top: 0;
+      left: 0;
+      background-color: $greenBgColor;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 400px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: $globalPrimaryColor;
+    }
+  }
+  .videoProduction {
+    @include module;
+    height: 450px;
+    min-height: 450px;
+    .content {
+      flex-direction: column;
+      justify-content: center;
+
+      $boxHeight: 280px;
+      .box {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: $boxHeight;
+
+        .itemBox {
+          width: 380px;
+          height: 100%;
+          position: relative;
+          cursor: pointer;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+          svg {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            color: rgba(255, 255, 255, 0.5);
+          }
+        }
+      }
+    }
+  }
+  .footer {
+    @include module;
+    height: 260px;
+    min-height: 260px;
+    align-items: center;
+    background-color: #4b805a;
+    .content {
+      align-items: center;
+      justify-content: center;
+      height: 96px;
+      img {
+        width: 138px;
+        height: 100%;
+      }
+      .rightBox {
+        margin-left: 60px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        .text {
+          display: flex;
+          flex: 1;
+          align-items: center;
+          font-size: 48px;
+          color: #000;
+          opacity: 0.55;
+        }
+        .statement {
+          font-size: 14px;
+          height: 14px;
+          line-height: 14px;
+          color: #000;
+          opacity: 0.55;
+        }
+      }
+    }
+  }
+
+  @keyframes verticalMove {
+    0% {
+      top: 25px;
+    }
+    10% {
+      top: 0px;
+    }
+    20% {
+      top: 25px;
+    }
+    50% {
+      top: 25px;
+    }
+    60% {
+      top: 50px;
+    }
+    70% {
+      top: 25px;
+    }
+    100% {
+      top: 25px;
+    }
+  }
+  @keyframes verticalMoveReverse {
+    0% {
+      top: 25px;
+    }
+    10% {
+      top: 50px;
+    }
+    20% {
+      top: 25px;
+    }
+    50% {
+      top: 25px;
+    }
+    60% {
+      top: 0px;
+    }
+    70% {
+      top: 25px;
+    }
+    100% {
+      top: 25px;
+    }
+  }
+}
