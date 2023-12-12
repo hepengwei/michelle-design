@@ -3,7 +3,7 @@
  */
 import React, { useRef, useMemo } from "react";
 import useQuantumEntanglement from "hooks/useQuantumEntanglement";
-import {IFRAME_ID, THAT_PAGE_URL} from 'constants/common';
+import { IFRAME_ID, THAT_PAGE_URL } from "constants/common";
 import styles from "./index.module.scss";
 
 const receiveKey = "aPageInfo";
@@ -71,7 +71,6 @@ const InteractionEyes = () => {
           </div>
         </>
       )}
-      <iframe id={IFRAME_ID} src={THAT_PAGE_URL} style={{ visibility: "hidden" }} />
     </div>
   );
 };
