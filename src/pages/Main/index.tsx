@@ -2,6 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { DoubleRightOutlined, PlayCircleFilled } from "@ant-design/icons";
 import useAuth from "hooks/useAuth";
+import useImageSrc from "hooks/useImageSrc";
+import MyImage from "components/MyImage";
 import InteractionEyes from "components/InteractionEyes";
 import HeaderButton from "components/HeaderButton";
 import ModuleTitle from "components/ModuleTitle";
@@ -35,10 +37,13 @@ import uiDesign3 from "images/uiDesign3.png";
 import videoProduction1 from "images/videoProduction1.png";
 import videoProduction2 from "images/videoProduction2.png";
 import videoProduction3 from "images/videoProduction3.png";
+import footerBg from "images/footerBg.png";
 import styles from "./index.module.scss";
 
 const Main = () => {
   useAuth();
+  const bannerBgSrc = useImageSrc(bannerBg);
+  const footerBgSrc = useImageSrc(footerBg);
   const navigate = useNavigate();
 
   return (
@@ -79,7 +84,14 @@ const Main = () => {
       {/* banner模块 */}
       <div
         className={styles.banner}
-        style={{ backgroundImage: `url(${bannerBg})`, backgroundSize: "100%" }}
+        style={
+          bannerBgSrc
+            ? {
+                backgroundImage: `url(${bannerBgSrc})`,
+                backgroundSize: "100% 100%",
+              }
+            : {}
+        }
       >
         <div className={styles.content}>
           <div className={styles.left}>
@@ -96,9 +108,24 @@ const Main = () => {
             />
           </div>
           <div className={styles.imgBox}>
-            <img src={author1} alt="" className={styles.leftImg} />
-            <img src={author2} alt="" className={styles.middleImg} />
-            <img src={author3} alt="" className={styles.rightImg} />
+            <MyImage
+              src={author1}
+              width={120}
+              height={430}
+              className={styles.leftImg}
+            />
+            <MyImage
+              src={author2}
+              width={220}
+              height={480}
+              className={styles.middleImg}
+            />
+            <MyImage
+              src={author3}
+              width={120}
+              height={430}
+              className={styles.rightImg}
+            />
           </div>
         </div>
       </div>
@@ -166,7 +193,7 @@ const Main = () => {
           <div className={styles.box}>
             <div className={styles.left}>
               <div className={styles.topFloor}>
-                <img src={eCommerceDesign1} alt="" />
+                <MyImage src={eCommerceDesign1} width={340} height={420} />
                 <span className={styles.bottomText}>
                   <DoubleRightOutlined />
                   店铺首页
@@ -176,7 +203,7 @@ const Main = () => {
             <div className={styles.middle}>
               <div className={styles.topOrBottom}>
                 <div className={styles.topFloor}>
-                  <img src={eCommerceDesign2} alt="" />
+                  <MyImage src={eCommerceDesign2} width={400} height={170} />
                   <span className={styles.bottomText}>
                     <DoubleRightOutlined />
                     Banner
@@ -185,7 +212,7 @@ const Main = () => {
               </div>
               <div className={styles.topOrBottom}>
                 <div className={styles.topFloor}>
-                  <img src={eCommerceDesign3} alt="" />
+                  <MyImage src={eCommerceDesign3} width={400} height={170} />
                   <span className={styles.bottomText}>
                     <DoubleRightOutlined />
                     主图
@@ -195,7 +222,7 @@ const Main = () => {
             </div>
             <div className={styles.right}>
               <div className={styles.topFloor}>
-                <img src={eCommerceDesign4} alt="" />
+                <MyImage src={eCommerceDesign4} width={340} height={420} />
                 <span className={styles.bottomText}>
                   <DoubleRightOutlined />
                   详情页
@@ -217,7 +244,7 @@ const Main = () => {
             <div className={styles.left}>
               <div className={styles.imgBox}>
                 <div className={styles.shadowBox}>
-                  <img src={graphicDesign1} alt="" />
+                  <MyImage src={graphicDesign1} width={440} height={450} />
                 </div>
                 <span>海报</span>
               </div>
@@ -227,7 +254,7 @@ const Main = () => {
               <div className={styles.top}>
                 <div className={styles.imgBox}>
                   <div className={styles.shadowBox}>
-                    <img src={graphicDesign2} alt="" />
+                    <MyImage src={graphicDesign2} width={610} height={190} />
                   </div>
                   <span>产品画册</span>
                 </div>
@@ -237,7 +264,7 @@ const Main = () => {
                 <div className={styles.left}>
                   <div className={styles.imgBox}>
                     <div className={styles.shadowBox}>
-                      <img src={graphicDesign3} alt="" />
+                      <MyImage src={graphicDesign3} width={265} height={190} />
                     </div>
                     <span>易拉宝</span>
                   </div>
@@ -246,7 +273,7 @@ const Main = () => {
                 <div className={styles.right}>
                   <div className={styles.imgBox}>
                     <div className={styles.shadowBox}>
-                      <img src={graphicDesign4} alt="" />
+                      <MyImage src={graphicDesign4} width={265} height={190} />
                     </div>
                     <span>文化墙</span>
                   </div>
@@ -265,10 +292,10 @@ const Main = () => {
             <div className={styles.itemBox}>
               <div className={styles.topBox}>
                 <div className={styles.bottomImgBox}>
-                  <img src={uiDesign1} alt="" />
+                  <MyImage src={uiDesign1} width={372} height={470} />
                 </div>
                 <div className={styles.topImgBox}>
-                  <img src={uiDesign1} alt="" />
+                  <MyImage src={uiDesign1} width={372} height={470} />
                 </div>
               </div>
               <span className={styles.bottomText}>PC端</span>
@@ -276,10 +303,10 @@ const Main = () => {
             <div className={styles.itemBox}>
               <div className={styles.topBox}>
                 <div className={styles.bottomImgBox}>
-                  <img src={uiDesign2} alt="" />
+                  <MyImage src={uiDesign2} width={372} height={470} />
                 </div>
                 <div className={styles.topImgBox}>
-                  <img src={uiDesign2} alt="" />
+                  <MyImage src={uiDesign2} width={372} height={470} />
                 </div>
               </div>
               <span className={styles.bottomText}>移动端</span>
@@ -287,10 +314,10 @@ const Main = () => {
             <div className={styles.itemBox}>
               <div className={styles.topBox}>
                 <div className={styles.bottomImgBox}>
-                  <img src={uiDesign3} alt="" />
+                  <MyImage src={uiDesign3} width={372} height={470} />
                 </div>
                 <div className={styles.topImgBox}>
-                  <img src={uiDesign3} alt="" />
+                  <MyImage src={uiDesign3} width={372} height={470} />
                 </div>
               </div>
               <span className={styles.bottomText}>图标</span>
@@ -308,22 +335,47 @@ const Main = () => {
           />
           <div className={styles.box}>
             <div className={styles.itemBox}>
-              <img src={videoProduction1} alt="" />
+              <MyImage
+                src={videoProduction1}
+                width={380}
+                height={280}
+                showBgColor
+              />
               <PlayCircleFilled />
             </div>
             <div className={styles.itemBox}>
-              <img src={videoProduction2} alt="" />
+              <MyImage
+                src={videoProduction2}
+                width={380}
+                height={280}
+                showBgColor
+              />
               <PlayCircleFilled />
             </div>
             <div className={styles.itemBox}>
-              <img src={videoProduction3} alt="" />
+              <MyImage
+                src={videoProduction3}
+                width={380}
+                height={280}
+                showBgColor
+              />
               <PlayCircleFilled />
             </div>
           </div>
         </div>
       </div>
       {/* footer模块 */}
-      <div className={styles.footer}>
+      <div
+        className={styles.footer}
+        style={
+          footerBgSrc
+            ? {
+                backgroundImage: `url(${footerBgSrc})`,
+                backgroundSize: "100% 100%",
+              }
+            : {}
+        }
+      >
         <div className={styles.content}>
           <img src={logo2} alt="" />
           <div className={styles.rightBox}>

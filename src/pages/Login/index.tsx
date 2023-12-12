@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { Input, Button, message } from "antd";
 import { LockOutlined } from "@ant-design/icons";
 import { PASSWORD, DEFAULT_PAGE_URL } from "constants/common";
+import useImageSrc from "hooks/useImageSrc";
 import loginBg from "images/loginBg.png";
 import logo1 from "images/logo1.png";
 import logo2 from "images/logo2.png";
@@ -13,6 +14,7 @@ const maxAmbiguity = 6; // 背景图最大模糊度
 const Login = () => {
   const [search] = useSearchParams();
   const navigate = useNavigate();
+  const loginBgSrc = useImageSrc(loginBg);
   const [password, setPassword] = useState<string>(
     search && search.get("password") ? search.get("password") || "" : ""
   );
@@ -44,10 +46,14 @@ const Login = () => {
     <div className={styles.container}>
       <div
         className={styles.bgImg}
-        style={{
-          backgroundImage: `url(${loginBg})`,
-          filter: `blur(${ambiguity}px)`,
-        }}
+        style={
+          loginBgSrc
+            ? {
+                backgroundImage: `url(${loginBgSrc})`,
+                filter: `blur(${ambiguity}px)`,
+              }
+            : {}
+        }
       />
       <div className={styles.content}>
         <div className={styles.leftBox}>
