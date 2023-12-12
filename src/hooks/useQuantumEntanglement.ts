@@ -1,7 +1,13 @@
 /**
  * 跨域页面实现量子纠缠实时通信
  */
-import { useState, useRef, useLayoutEffect, useCallback, RefObject } from "react";
+import {
+  useState,
+  useRef,
+  useLayoutEffect,
+  useCallback,
+  RefObject,
+} from "react";
 import useScreenPosition from "hooks/useScreenPosition";
 import { PASSWORD } from "constants/common";
 
@@ -148,24 +154,25 @@ const useQuantumEntanglement = (
 
   useLayoutEffect(() => {
     window.addEventListener("message", onMessage, false);
-    console.log(111);
-    if (iframeId) {
-      const aIframe = document.getElementById(iframeId);
-      if (aIframe) {
-        console.log(222);
-        (aIframe as HTMLIFrameElement).onload = () => {
-          console.log('iframe ready');
-          isThatPageReady.current = true;
-          resendMessage();
-          if (window.self === window.top) {
-            window.addEventListener("storage", onStorage);
-            window.addEventListener("resize", resendMessage);
-            sendTimer.current = window.setInterval(() => {
-              postKeepAliveInfo();
-            }, 600);
-          }
-        };
-      }
+    if (iframeId && elementRef?.current) {
+      const aIframe: HTMLIFrameElement = document.createElement("iframe");
+      aIframe.id = iframeId;
+      aIframe.style.visibility = "hidden";
+      console.log(111);
+      aIframe.onload = () => {
+        console.log("iframe ready");
+        isThatPageReady.current = true;
+        resendMessage();
+        if (window.self === window.top) {
+          window.addEventListener("storage", onStorage);
+          window.addEventListener("resize", resendMessage);
+          sendTimer.current = window.setInterval(() => {
+            postKeepAliveInfo();
+          }, 600);
+        }
+      };
+      aIframe.src = thatPageUrl;
+      elementRef.current.appendChild(aIframe);
     }
 
     return () => {
