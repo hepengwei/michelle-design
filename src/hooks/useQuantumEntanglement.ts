@@ -76,7 +76,7 @@ const useQuantumEntanglement = (
   }, []);
 
   const onMessage = useCallback((e: any) => {
-    console.log(1111, e);
+    console.log(666, e);
     if (e.origin !== thatPageUrl) return;
     if (e.data) {
       if (e.data === "autoSavePassword") {
@@ -148,10 +148,13 @@ const useQuantumEntanglement = (
 
   useEffect(() => {
     window.addEventListener("message", onMessage, false);
+    console.log(111);
     if (iframeId) {
       const aIframe = document.getElementById(iframeId);
       if (aIframe) {
+        console.log(222);
         (aIframe as HTMLIFrameElement).onload = () => {
+          console.log('iframe ready');
           isThatPageReady.current = true;
           resendMessage();
           if (window.self === window.top) {
