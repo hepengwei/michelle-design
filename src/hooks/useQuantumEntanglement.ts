@@ -9,7 +9,6 @@ import {
   RefObject,
 } from "react";
 import useScreenPosition from "hooks/useScreenPosition";
-import { PASSWORD } from "constants/common";
 
 interface ThatPageInfo {
   pageId: string;
@@ -81,23 +80,6 @@ const useQuantumEntanglement = (
     }
   }, []);
 
-  const onMessage = useCallback((e: any) => {
-    console.log(666, e);
-    if (e.origin !== thatPageUrl) return;
-    if (e.data) {
-      if (e.data === "autoSavePassword") {
-        window.localStorage.setItem("password", PASSWORD);
-      } else if (e.data.includes("keepAlive")) {
-        window.localStorage.setItem("keepAliveInfo", e.data);
-      } else {
-        window.localStorage.setItem(receiveKey, e.data);
-      }
-    } else {
-      window.localStorage.setItem("keepAliveInfo", "");
-      window.localStorage.setItem(receiveKey, "");
-    }
-  }, []);
-
   const onStorage = useCallback((e: any) => {
     if (e.key === "keepAliveInfo") {
       if (e.newValue) {
@@ -146,14 +128,15 @@ const useQuantumEntanglement = (
   };
 
   const resendMessage = useCallback(() => {
-    postInfo();
-    getLocalThatPageInfo();
+    if (window.self === window.top) {
+      postInfo();
+      getLocalThatPageInfo();
+    }
   }, []);
 
   useScreenPosition(resendMessage);
 
   useLayoutEffect(() => {
-    window.addEventListener("message", onMessage, false);
     if (window.self === window.top) {
       if (iframeId && elementRef?.current) {
         const aIframe: HTMLIFrameElement = document.createElement("iframe");
@@ -177,7 +160,6 @@ const useQuantumEntanglement = (
     }
 
     return () => {
-      window.removeEventListener("message", onMessage);
       if (window.self === window.top) {
         window.removeEventListener("storage", onStorage);
         window.removeEventListener("resize", resendMessage);
