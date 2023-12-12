@@ -1,7 +1,7 @@
 /**
  * 跨域页面实现量子纠缠实时通信
  */
-import { useState, useRef, useEffect, useCallback, RefObject } from "react";
+import { useState, useRef, useLayoutEffect, useCallback, RefObject } from "react";
 import useScreenPosition from "hooks/useScreenPosition";
 import { PASSWORD } from "constants/common";
 
@@ -146,7 +146,7 @@ const useQuantumEntanglement = (
 
   useScreenPosition(resendMessage);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     window.addEventListener("message", onMessage, false);
     console.log(111);
     if (iframeId) {

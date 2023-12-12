@@ -45,27 +45,6 @@ const prodConfig = {
           minChunks: 1, // 被多少个chunk引用之后就提取出来
           priority: 10, // 缓存组的优先级
         },
-        echarts: {
-          name: "chunk-echarts",
-          test: /[\\/]node_modules[\\/]?echarts/,
-          priority: 10,
-          chunks: "initial", // only package third parties that are initially dependent
-        },
-        tensorflow_models: {
-          name: "chunk-tensorflow_models",
-          test: /[\\/]node_modules[\\/]?@tensorflow-models/,
-          priority: 10,
-        },
-        tensorflow_tfjs_core: {
-          name: "chunk-tensorflow_tfjs_core",
-          test: /[\\/]node_modules[\\/]@tensorflow[\\/]tfjs-core(?:[\\/].*)?/,
-          priority: 10,
-        },
-        tensorflow_tfjs_webgl: {
-          name: "chunk-tensorflow_tfjs_webgl",
-          test: /node_modules[\\/]@tensorflow[\\/]tfjs-backend-webgl(?:[\\/].*)?/,
-          priority: 10,
-        },
       },
     },
   },
