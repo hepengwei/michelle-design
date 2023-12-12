@@ -76,6 +76,7 @@ const useQuantumEntanglement = (
   }, []);
 
   const onMessage = useCallback((e: any) => {
+    console.log(1111, e);
     if (e.origin !== thatPageUrl) return;
     if (e.data) {
       if (e.data === "autoSavePassword") {
