@@ -81,6 +81,7 @@ const useQuantumEntanglement = (
   }, []);
 
   const onStorage = useCallback((e: any) => {
+    console.log(123, e);
     if (e.key === "keepAliveInfo") {
       if (e.newValue) {
         const keepAliveInfo = JSON.parse(e.newValue);
