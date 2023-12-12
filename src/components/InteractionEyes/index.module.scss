@@ -10,38 +10,7 @@
   height: $eyeSize;
   display: flex;
   justify-content: space-between;
-
-  .heart {
-    width: $heartSize;
-    height: $heartSize;
-    transform: translateY(1px) rotate(-45deg) scale(1);
-    background-color: red;
-    position: relative;
-    transition: all;
-    animation: beat 0.5s infinite;
-
-    &::before {
-      content: "";
-      position: absolute;
-      width: $heartSize;
-      height: $heartSize;
-      border-radius: 50%;
-      top: calc($heartSize / -2);
-      left: 0;
-      background-color: red;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      width: $heartSize;
-      height: $heartSize;
-      border-radius: 50%;
-      top: 0;
-      right: calc($heartSize / -2);
-      background-color: red;
-    }
-  }
+  position: relative;
 
   .eye {
     box-sizing: border-box;
@@ -53,6 +22,38 @@
     align-items: center;
     justify-content: center;
 
+    .heart {
+      width: $heartSize;
+      height: $heartSize;
+      transform: translateY(1px) rotate(-45deg) scale(1);
+      background-color: red;
+      position: relative;
+      transition: all;
+      animation: beat 0.5s infinite;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: $heartSize;
+        height: $heartSize;
+        border-radius: 50%;
+        top: calc($heartSize / -2);
+        left: 0;
+        background-color: red;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: $heartSize;
+        height: $heartSize;
+        border-radius: 50%;
+        top: 0;
+        right: calc($heartSize / -2);
+        background-color: red;
+      }
+    }
+
     .eyeball {
       box-sizing: border-box;
       width: $eyeballSize;
@@ -60,6 +61,14 @@
       border-radius: 50%;
       background-color: $color;
     }
+  }
+
+  iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
   }
 
   @keyframes beat {
