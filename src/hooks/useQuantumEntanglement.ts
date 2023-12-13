@@ -47,7 +47,7 @@ const useQuantumEntanglement = (
         const data = { pageId: pageId.current, x, y };
         (aIframe as HTMLIFrameElement).contentWindow?.postMessage(
           JSON.stringify(data),
-          "*"
+          thatPageUrl
         );
       }
     }
@@ -66,7 +66,7 @@ const useQuantumEntanglement = (
         };
         (aIframe as HTMLIFrameElement).contentWindow?.postMessage(
           JSON.stringify(data),
-          "*"
+          thatPageUrl
         );
         if (!receiveTimer.current) {
           receiveTimer.current = window.setTimeout(() => {
