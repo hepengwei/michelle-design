@@ -9,6 +9,7 @@ import {
   RefObject,
 } from "react";
 import useScreenPosition from "hooks/useScreenPosition";
+import useStorage from "./useStorage";
 
 interface ThatPageInfo {
   pageId: string;
@@ -80,35 +81,35 @@ const useQuantumEntanglement = (
     }
   }, []);
 
-  const onStorage = useCallback((e: any) => {
-    console.log(123, e);
-    if (e.key === "keepAliveInfo") {
-      if (e.newValue) {
-        const keepAliveInfo = JSON.parse(e.newValue);
-        if (keepAliveInfo && keepAliveInfo.pageId === thatPageId.current) {
-          // 如果收到了保活信息,则清除receiveTimer
-          if (receiveTimer.current) {
-            window.clearTimeout(receiveTimer.current);
-            receiveTimer.current = 0;
-          }
-        }
-      }
-    } else if (e.key === receiveKey) {
-      if (e.newValue) {
-        const thatPageInfo = JSON.parse(e.newValue);
-        if (thatPageInfo) {
-          thatPageId.current = thatPageInfo.pageId;
-          setThatPageInfo(thatPageInfo);
-        } else {
-          thatPageId.current = "";
-          setThatPageInfo(null);
-        }
-      } else {
-        thatPageId.current = "";
-        setThatPageInfo(null);
-      }
-    }
-  }, []);
+  // const onStorage = useCallback((e: any) => {
+  //   console.log(123, e);
+  //   if (e.key === "keepAliveInfo") {
+  //     if (e.newValue) {
+  //       const keepAliveInfo = JSON.parse(e.newValue);
+  //       if (keepAliveInfo && keepAliveInfo.pageId === thatPageId.current) {
+  //         // 如果收到了保活信息,则清除receiveTimer
+  //         if (receiveTimer.current) {
+  //           window.clearTimeout(receiveTimer.current);
+  //           receiveTimer.current = 0;
+  //         }
+  //       }
+  //     }
+  //   } else if (e.key === receiveKey) {
+  //     if (e.newValue) {
+  //       const thatPageInfo = JSON.parse(e.newValue);
+  //       if (thatPageInfo) {
+  //         thatPageId.current = thatPageInfo.pageId;
+  //         setThatPageInfo(thatPageInfo);
+  //       } else {
+  //         thatPageId.current = "";
+  //         setThatPageInfo(null);
+  //       }
+  //     } else {
+  //       thatPageId.current = "";
+  //       setThatPageInfo(null);
+  //     }
+  //   }
+  // }, []);
 
   // 获取localStorage中的另一页面的信息，并setThatPageInfo
   const getLocalThatPageInfo = () => {
@@ -131,14 +132,6 @@ const useQuantumEntanglement = (
   const resendMessage = useCallback(() => {
     if (window.self === window.top) {
       postInfo();
-      window.localStorage.setItem(
-        "keepAliveInfo",
-        JSON.stringify({
-          pageId: pageId.current,
-          keepAlive: true,
-          timestamp: new Date().getTime(),
-        })
-      );
       getLocalThatPageInfo();
     }
   }, []);
@@ -157,7 +150,7 @@ const useQuantumEntanglement = (
           isThatPageReady.current = true;
           resendMessage();
 
-          window.addEventListener("storage", onStorage);
+          // window.addEventListener("storage", onStorage);
           window.addEventListener("resize", resendMessage);
           sendTimer.current = window.setInterval(() => {
             postKeepAliveInfo();
@@ -170,13 +163,47 @@ const useQuantumEntanglement = (
 
     return () => {
       if (window.self === window.top) {
-        window.removeEventListener("storage", onStorage);
+        // window.removeEventListener("storage", onStorage);
         window.removeEventListener("resize", resendMessage);
         sendTimer.current && window.clearInterval(sendTimer.current);
         receiveTimer.current && window.clearTimeout(receiveTimer.current);
       }
     };
   }, []);
+
+  const onReceiveKeepAliveInfo = useCallback((newValue: string | null) => {
+    console.log(123, newValue);
+    if (newValue) {
+      const keepAliveInfo = JSON.parse(newValue);
+      if (keepAliveInfo && keepAliveInfo.pageId === thatPageId.current) {
+        // 如果收到了保活信息,则清除receiveTimer
+        if (receiveTimer.current) {
+          window.clearTimeout(receiveTimer.current);
+          receiveTimer.current = 0;
+        }
+      }
+    }
+  }, []);
+
+  const onReceiveThatPageInfo = useCallback((newValue: string | null) => {
+    console.log(456, newValue);
+    if (newValue) {
+      const thatPageInfo = JSON.parse(newValue);
+      if (thatPageInfo) {
+        thatPageId.current = thatPageInfo.pageId;
+        setThatPageInfo(thatPageInfo);
+      } else {
+        thatPageId.current = "";
+        setThatPageInfo(null);
+      }
+    } else {
+      thatPageId.current = "";
+      setThatPageInfo(null);
+    }
+  }, []);
+
+  useStorage("keepAliveInfo", onReceiveKeepAliveInfo);
+  useStorage(receiveKey, onReceiveThatPageInfo);
 
   return { thatPageInfo, resendMessage };
 };
