@@ -3,7 +3,12 @@
  */
 import React, { useRef, useMemo } from "react";
 import useQuantumEntanglement from "hooks/useQuantumEntanglement";
-import { IFRAME_ID, THAT_PAGE_URL, RECEIVE_KEY } from "constants/common";
+import {
+  IFRAME_ID,
+  THAT_PAGE_URL,
+  RECEIVE_KEY,
+  SERVICE_WORKER_FILE,
+} from "constants/common";
 import styles from "./index.module.scss";
 
 const eyeSize = 28;
@@ -16,6 +21,7 @@ const InteractionEyes = () => {
     IFRAME_ID,
     THAT_PAGE_URL,
     RECEIVE_KEY,
+    SERVICE_WORKER_FILE,
     containerRef
   );
 
