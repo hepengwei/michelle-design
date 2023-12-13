@@ -131,6 +131,14 @@ const useQuantumEntanglement = (
   const resendMessage = useCallback(() => {
     if (window.self === window.top) {
       postInfo();
+      window.localStorage.setItem(
+        "keepAliveInfo",
+        JSON.stringify({
+          pageId: pageId.current,
+          keepAlive: true,
+          timestamp: new Date().getTime(),
+        })
+      );
       getLocalThatPageInfo();
     }
   }, []);
