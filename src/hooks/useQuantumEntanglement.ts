@@ -67,7 +67,6 @@ const useQuantumEntanglement = (
 
   // 将当前页面位置信息从localStorage中清除
   const removeInfo = useCallback(() => {
-    console.log("remove");
     const selfPageInfoStr = window.localStorage.getItem(receiveSelfKey);
     if (selfPageInfoStr) {
       const selfPageInfoList: InteractPageInfo[] = JSON.parse(selfPageInfoStr);
@@ -185,34 +184,8 @@ const useQuantumEntanglement = (
 
   // localStorage改变的回调
   const onStorage = useCallback((e: any) => {
-    console.log(123, e);
     if (e.key === receiveSelfKey) {
       setSelfPageInfo(e.newValue);
-      // if (e.newValue) {
-      //   const selfPageInfoList = JSON.parse(e.newValue);
-      //   if (selfPageInfoList && selfPageInfoList.length > 0) {
-      //     let exist = false;
-      //     for (let i = 0, l = selfPageInfoList.length; i < l; i++) {
-      //       const item = selfPageInfoList[i];
-      //       if (item.pageId !== pageId.current) {
-      //         interactPageId.current = item.pageId;
-      //         setInteractPageInfo(item);
-      //         exist = true;
-      //         break;
-      //       }
-      //     }
-      //     if (!exist) {
-      //       interactPageId.current = "";
-      //       setInteractPageInfo(null);
-      //     }
-      //   } else {
-      //     interactPageId.current = "";
-      //     setInteractPageInfo(null);
-      //   }
-      // } else {
-      //   interactPageId.current = "";
-      //   setInteractPageInfo(null);
-      // }
     } else if (e.key === "keepAliveInfo") {
       if (e.newValue) {
         const keepAliveInfo = JSON.parse(e.newValue);
@@ -244,19 +217,6 @@ const useQuantumEntanglement = (
       }
     } else if (e.key === receiveThatKey) {
       setThatPageInfo(e.newValue);
-      // if (e.newValue) {
-      //   const thatPageInfo = JSON.parse(e.newValue);
-      //   if (thatPageInfo) {
-      //     interactPageId.current = thatPageInfo.pageId;
-      //     setInteractPageInfo(thatPageInfo);
-      //   } else {
-      //     interactPageId.current = "";
-      //     setInteractPageInfo(null);
-      //   }
-      // } else {
-      //   interactPageId.current = "";
-      //   setInteractPageInfo(null);
-      // }
     }
   }, []);
 
@@ -303,9 +263,7 @@ const useQuantumEntanglement = (
           const aIframe: HTMLIFrameElement = document.createElement("iframe");
           aIframe.id = iframeId;
           aIframe.style.visibility = "hidden";
-          console.log(111);
           aIframe.onload = () => {
-            console.log("iframe ready");
             isThatPageReady.current = true;
             resendMessage();
             window.addEventListener("storage", onStorage);
