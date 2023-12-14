@@ -67,6 +67,7 @@ const useQuantumEntanglement = (
 
   // 将当前页面位置信息从localStorage中清除
   const removeInfo = useCallback(() => {
+    console.log("remove");
     const selfPageInfoStr = window.localStorage.getItem(receiveSelfKey);
     if (selfPageInfoStr) {
       const selfPageInfoList: InteractPageInfo[] = JSON.parse(selfPageInfoStr);
@@ -320,6 +321,7 @@ const useQuantumEntanglement = (
         resendMessage();
         window.addEventListener("storage", onStorage);
         window.addEventListener("resize", resendMessage);
+        window.addEventListener("beforeunload", removeInfo);
       }
     }
 
@@ -330,7 +332,6 @@ const useQuantumEntanglement = (
         sendTimer.current && window.clearInterval(sendTimer.current);
         receiveTimer.current && window.clearTimeout(receiveTimer.current);
         if (!isDev) {
-          console.log("remove");
           removeInfo();
         }
       }
