@@ -4,7 +4,11 @@
 import { useLayoutEffect, useCallback } from "react";
 import { PASSWORD } from "constants/common";
 
-const useMessage = (thatPageUrl: string, receiveKey: string) => {
+const isDev =
+  window.location.host.includes("localhost") ||
+  window.location.host.includes("127.0.0.1");
+
+const useMessage = (thatPageUrl: string, receiveThatKey: string) => {
   const onMessage = useCallback((e: any) => {
     console.log(666, e);
     if (e.origin !== thatPageUrl) return;
@@ -14,18 +18,23 @@ const useMessage = (thatPageUrl: string, receiveKey: string) => {
       } else if (e.data.includes("keepAlive")) {
         window.localStorage.setItem("keepAliveInfo", e.data);
       } else {
-        window.localStorage.setItem(receiveKey, e.data);
+        window.localStorage.setItem(receiveThatKey, e.data);
       }
     } else {
       window.localStorage.setItem("keepAliveInfo", "");
-      window.localStorage.setItem(receiveKey, "");
+      window.localStorage.setItem(receiveThatKey, "");
     }
   }, []);
 
   useLayoutEffect(() => {
-    window.addEventListener("message", onMessage, false);
+    if (isDev) {
+      window.addEventListener("message", onMessage, false);
+    }
+
     return () => {
-      window.removeEventListener("message", onMessage);
+      if (isDev) {
+        window.removeEventListener("message", onMessage);
+      }
     };
   }, []);
 };

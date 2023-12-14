@@ -7,10 +7,9 @@ import {
   useSearchParams,
 } from "react-router-dom";
 import { contentRoutes as contentRoutesConfig } from "@/routes/routes";
-import {
-  PASSWORD,
-  DEFAULT_PAGE_URL,
-} from "constants/common";
+import { PASSWORD, DEFAULT_PAGE_URL } from "constants/common";
+import useMessage from "hooks/useMessage";
+import { THAT_PAGE_URL, RECEIVE_THAT_KEY } from "constants/common";
 import styles from "./index.module.scss";
 
 const Home = () => {
@@ -18,6 +17,7 @@ const Home = () => {
   const [search] = useSearchParams();
   const location = useLocation();
   const navigate = useNavigate();
+  useMessage(THAT_PAGE_URL, RECEIVE_THAT_KEY);
 
   useEffect(() => {
     const { pathname } = location;

@@ -40,6 +40,10 @@ import videoProduction3 from "images/videoProduction3.png";
 import footerBg from "images/footerBg.png";
 import styles from "./index.module.scss";
 
+const isDev =
+  window.location.host.includes("localhost") ||
+  window.location.host.includes("127.0.0.1");
+
 const Main = () => {
   useAuth();
   const bannerBgSrc = useImageSrc(bannerBg);
@@ -63,7 +67,15 @@ const Main = () => {
               src={logo1}
               alt=""
               onClick={() => {
-                window.open(THAT_PAGE_URL, "_blank", "top=200,left=100");
+                if (isDev) {
+                  window.open(THAT_PAGE_URL, "_blank", "top=200,left=100");
+                } else {
+                  window.open(
+                    "https://michellez.cn",
+                    "_blank",
+                    "top=200,left=100"
+                  );
+                }
               }}
             />
             <InteractionEyes />
