@@ -22,7 +22,6 @@ const prodConfig = {
           },
         },
         resolveApp("CNAME"),
-        resolveApp("md-service-worker.js"),
       ],
     }),
   ],
