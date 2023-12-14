@@ -10,7 +10,6 @@ const isDev =
 
 const useMessage = (thatPageUrl: string, receiveThatKey: string) => {
   const onMessage = useCallback((e: any) => {
-    console.log(666, e);
     if (e.origin !== thatPageUrl) return;
     if (e.data) {
       if (e.data === "autoSavePassword") {
