@@ -173,7 +173,7 @@
         &::before {
           content: attr(data-englishtext);
           position: absolute;
-          width: 410px;
+          width: 414px;
           height: $fontSize + 4px;
           top: 2px - $fontSize;
           left: 0;
@@ -182,7 +182,7 @@
           font-size: $fontSize;
           opacity: 0.3;
           font-family: "HarmonyOS_Sans_Thin";
-          font-weight: 400;
+          font-weight: 300;
           background-image: linear-gradient(to bottom, #000000, transparent);
           -webkit-background-clip: text;
           background-clip: text;

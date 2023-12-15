@@ -46,6 +46,7 @@ const isDev =
 
 const Main = () => {
   useAuth();
+  const bgSrc = useImageSrc(bg);
   const bannerBgSrc = useImageSrc(bannerBg);
   const footerBgSrc = useImageSrc(footerBg);
   const navigate = useNavigate();
@@ -53,11 +54,15 @@ const Main = () => {
   return (
     <div
       className={styles.container}
-      style={{
-        backgroundImage: `url(${bg})`,
-        backgroundRepeat: "repeat-y",
-        backgroundSize: "100% 100px",
-      }}
+      style={
+        bgSrc
+          ? {
+              backgroundImage: `url(${bg})`,
+              backgroundRepeat: "repeat-y",
+              backgroundSize: "100% 100px",
+            }
+          : {}
+      }
     >
       {/* header模块 */}
       <div className={styles.header}>
