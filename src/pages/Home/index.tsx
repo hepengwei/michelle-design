@@ -7,12 +7,22 @@ import {
   useSearchParams,
 } from "react-router-dom";
 import { contentRoutes as contentRoutesConfig } from "@/routes/routes";
-import { PASSWORD, DEFAULT_PAGE_URL } from "constants/common";
+import {
+  PASSWORD,
+  DEFAULT_PAGE_URL,
+  THAT_PAGE_URL,
+  RECEIVE_THAT_KEY,
+} from "constants/common";
 import useMessage from "hooks/useMessage";
-import { THAT_PAGE_URL, RECEIVE_THAT_KEY } from "constants/common";
+import useGoogleAnalytics from "hooks/useGoogleAnalytics";
+import Header from "components/Header";
 import styles from "./index.module.scss";
 
 const Home = () => {
+  const isDev = !process.env.NODE_ENV || process.env.NODE_ENV === "development";
+  if (!isDev) {
+    useGoogleAnalytics();
+  }
   const contentRoutes = useRoutes(contentRoutesConfig);
   const [search] = useSearchParams();
   const location = useLocation();
@@ -35,7 +45,10 @@ const Home = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.container_content}>{contentRoutes}</div>
+      <div className={styles.container_content}>
+        {location && !location.pathname.includes("/login") && <Header />}
+        {contentRoutes}
+      </div>
     </div>
   );
 };

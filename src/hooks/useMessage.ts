@@ -4,10 +4,6 @@
 import { useLayoutEffect, useCallback } from "react";
 import { PASSWORD } from "constants/common";
 
-const isDev =
-  window.location.host.includes("localhost") ||
-  window.location.host.includes("127.0.0.1");
-
 const useMessage = (thatPageUrl: string, receiveThatKey: string) => {
   const onMessage = useCallback((e: any) => {
     if (e.origin !== thatPageUrl) return;
@@ -26,6 +22,8 @@ const useMessage = (thatPageUrl: string, receiveThatKey: string) => {
   }, []);
 
   useLayoutEffect(() => {
+    const isDev =
+      !process.env.NODE_ENV || process.env.NODE_ENV === "development";
     if (isDev) {
       window.addEventListener("message", onMessage, false);
     }

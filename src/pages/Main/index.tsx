@@ -4,15 +4,10 @@ import { DoubleRightOutlined, PlayCircleFilled } from "@ant-design/icons";
 import useAuth from "hooks/useAuth";
 import useImageSrc from "hooks/useImageSrc";
 import MyImage from "components/MyImage";
-import InteractionEyes from "components/InteractionEyes";
-import HeaderButton from "components/HeaderButton";
 import ModuleTitle from "components/ModuleTitle";
 import SkillCircle from "components/SkillCircle";
-import { PHONE_NUMBER, THAT_PAGE_URL } from "constants/common";
+import Footer from "components/Footer";
 import bg from "images/bg.png";
-import logo1 from "images/logo1.png";
-import logo2 from "images/logo2.png";
-import phone from "images/phone.png";
 import bannerBg from "images/bannerBg.png";
 import slogan from "images/slogan.png";
 import profession from "images/profession.png";
@@ -37,18 +32,13 @@ import uiDesign3 from "images/uiDesign3.png";
 import videoProduction1 from "images/videoProduction1.png";
 import videoProduction2 from "images/videoProduction2.png";
 import videoProduction3 from "images/videoProduction3.png";
-import footerBg from "images/footerBg.png";
 import styles from "./index.module.scss";
-
-const isDev =
-  window.location.host.includes("localhost") ||
-  window.location.host.includes("127.0.0.1");
 
 const Main = () => {
   useAuth();
   const bgSrc = useImageSrc(bg);
   const bannerBgSrc = useImageSrc(bannerBg);
-  const footerBgSrc = useImageSrc(footerBg);
+
   const navigate = useNavigate();
 
   return (
@@ -64,40 +54,6 @@ const Main = () => {
           : {}
       }
     >
-      {/* header模块 */}
-      <div className={styles.header}>
-        <div className={styles.content}>
-          <div className={styles.left}>
-            <img
-              src={logo1}
-              alt=""
-              onClick={() => {
-                if (isDev) {
-                  window.open(THAT_PAGE_URL, "_blank", "top=200,left=100");
-                } else {
-                  window.open(
-                    "https://michellez.cn",
-                    "_blank",
-                    "top=200,left=100"
-                  );
-                }
-              }}
-            />
-            <InteractionEyes />
-          </div>
-          <div className={styles.right}>
-            <HeaderButton text="首页" actived />
-            <HeaderButton text="电商设计" toUrl="/login" />
-            <HeaderButton text="平面设计" toUrl="/login" />
-            <HeaderButton text="UI设计" toUrl="/login" />
-            <HeaderButton text="视频制作" toUrl="/login" />
-            <div className={styles.phoneBox}>
-              <img src={phone} alt="" />
-              +86&nbsp;{PHONE_NUMBER}
-            </div>
-          </div>
-        </div>
-      </div>
       {/* banner模块 */}
       <div
         className={styles.banner}
@@ -381,28 +337,7 @@ const Main = () => {
           </div>
         </div>
       </div>
-      {/* footer模块 */}
-      <div
-        className={styles.footer}
-        style={
-          footerBgSrc
-            ? {
-                backgroundImage: `url(${footerBgSrc})`,
-                backgroundSize: "100% 100%",
-              }
-            : {}
-        }
-      >
-        <div className={styles.content}>
-          <img src={logo2} alt="" />
-          <div className={styles.rightBox}>
-            <div className={styles.text}>用眼看世界，用心做设计</div>
-            <div className={styles.statement}>
-              声明：本站所有素材版权均为作者本人所有，未经作者授权一律不得商用，违者必究。
-            </div>
-          </div>
-        </div>
-      </div>
+      <Footer />
     </div>
   );
 };
