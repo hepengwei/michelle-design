@@ -1,0 +1,42 @@
+.container {
+  width: 100%;
+  height: 260px;
+  min-height: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $globalPrimaryColor;
+  .content {
+    width: 1200px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 96px;
+    img {
+      width: 138px;
+      height: 100%;
+    }
+    .rightBox {
+      margin-left: 60px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      .text {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        font-size: 48px;
+        color: #000;
+        opacity: 0.55;
+      }
+      .statement {
+        font-size: 14px;
+        height: 14px;
+        line-height: 14px;
+        color: #000;
+        opacity: 0.55;
+      }
+    }
+  }
+}

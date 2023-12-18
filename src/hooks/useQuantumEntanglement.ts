@@ -10,9 +10,7 @@ interface InteractPageInfo {
   y: number;
 }
 
-const isDev =
-  window.location.host.includes("localhost") ||
-  window.location.host.includes("127.0.0.1");
+const isDev = !process.env.NODE_ENV || process.env.NODE_ENV === "development";
 
 const useQuantumEntanglement = (
   iframeId: string,
