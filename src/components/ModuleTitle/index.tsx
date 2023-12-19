@@ -4,25 +4,31 @@ import styles from "./index.module.scss";
 
 interface ModuleTitleProps {
   title: string;
-  englishTitle: string;
-  toUrl: string;
+  englishTitle?: string;
+  toUrl?: string;
 }
 
 const ModuleTitle = (props: ModuleTitleProps) => {
-  const { title, englishTitle, toUrl = "" } = props;
+  const { title, englishTitle = "", toUrl = "" } = props;
   const navigate = useNavigate();
 
   const onclick = () => {
-    navigate(toUrl);
+    toUrl && navigate(toUrl);
   };
 
   return (
     <div className={styles.container}>
       <div className={styles.topFloor}>
         <div className={styles.left}>{title}</div>
-        <div className={styles.right}>查看更多&nbsp;&gt;</div>
+        {toUrl && (
+          <div className={styles.right} onClick={onclick}>
+            查看更多&nbsp;&gt;
+          </div>
+        )}
       </div>
-      <div className={styles.englishTitle}>{englishTitle}</div>
+      {englishTitle && (
+        <div className={styles.englishTitle}>{englishTitle}</div>
+      )}
     </div>
   );
 };

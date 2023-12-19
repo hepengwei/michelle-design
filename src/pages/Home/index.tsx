@@ -6,7 +6,10 @@ import {
   useNavigate,
   useSearchParams,
 } from "react-router-dom";
-import { contentRoutes as contentRoutesConfig } from "@/routes/routes";
+import {
+  contentRoutes as contentRoutesConfig,
+  showHeaderPaths,
+} from "@/routes/routes";
 import {
   PASSWORD,
   DEFAULT_PAGE_URL,
@@ -46,7 +49,7 @@ const Home = () => {
   return (
     <div className={styles.container}>
       <div className={styles.container_content}>
-        {location && !location.pathname.includes("/login") && <Header />}
+        {location && showHeaderPaths.includes(location.pathname) && <Header />}
         {contentRoutes}
       </div>
     </div>
