@@ -1,3 +1,6 @@
+/**
+ * 首页
+ */
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { DoubleRightOutlined, PlayCircleFilled } from "@ant-design/icons";
@@ -161,7 +164,7 @@ const Main = () => {
           <ModuleTitle
             title="电商设计"
             englishTitle="E-COMMERCE DESIGN"
-            toUrl=""
+            toUrl="/eCommerceDesign"
           />
           <div className={styles.box}>
             <div className={styles.left}>
@@ -211,7 +214,7 @@ const Main = () => {
           <ModuleTitle
             title="平面设计"
             englishTitle="GRAPHIC DESIGN"
-            toUrl=""
+            toUrl="/graphicDesign"
           />
           <div className={styles.box}>
             <div className={styles.left}>
@@ -260,15 +263,19 @@ const Main = () => {
       {/* UI设计模块 */}
       <div className={styles.uiDesign}>
         <div className={styles.content}>
-          <ModuleTitle title="UI设计" englishTitle="UI DESIGN" toUrl="" />
+          <ModuleTitle
+            title="UI设计"
+            englishTitle="UI DESIGN"
+            toUrl="/uiDesign"
+          />
           <div className={styles.box}>
             <div className={styles.itemBox}>
               <div className={styles.topBox}>
                 <div className={styles.bottomImgBox}>
-                  <MyImage src={uiDesign1} width={372} height={470} />
+                  <MyImage src={uiDesign1} width={372} height={470} noCover />
                 </div>
                 <div className={styles.topImgBox}>
-                  <MyImage src={uiDesign1} width={372} height={470} />
+                  <MyImage src={uiDesign1} width={372} height={470} noCover />
                 </div>
               </div>
               <span className={styles.bottomText}>PC端</span>
@@ -276,10 +283,10 @@ const Main = () => {
             <div className={styles.itemBox}>
               <div className={styles.topBox}>
                 <div className={styles.bottomImgBox}>
-                  <MyImage src={uiDesign2} width={372} height={470} />
+                  <MyImage src={uiDesign2} width={372} height={470} noCover />
                 </div>
                 <div className={styles.topImgBox}>
-                  <MyImage src={uiDesign2} width={372} height={470} />
+                  <MyImage src={uiDesign2} width={372} height={470} noCover />
                 </div>
               </div>
               <span className={styles.bottomText}>移动端</span>
@@ -287,10 +294,10 @@ const Main = () => {
             <div className={styles.itemBox}>
               <div className={styles.topBox}>
                 <div className={styles.bottomImgBox}>
-                  <MyImage src={uiDesign3} width={372} height={470} />
+                  <MyImage src={uiDesign3} width={372} height={470} noCover />
                 </div>
                 <div className={styles.topImgBox}>
-                  <MyImage src={uiDesign3} width={372} height={470} />
+                  <MyImage src={uiDesign3} width={372} height={470} noCover />
                 </div>
               </div>
               <span className={styles.bottomText}>图标</span>

@@ -1,0 +1,22 @@
+.container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .pcTerminal {
+    @include module3;
+    height: 560px;
+    min-height: 560px;
+  }
+  .mobileTerminal {
+    @include module3;
+    height: 440px;
+    min-height: 440px;
+  }
+  .icon {
+    @include module3;
+    height: 510px;
+    min-height: 510px;
+  }
+}

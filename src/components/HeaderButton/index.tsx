@@ -25,7 +25,7 @@ const HeaderButton = (props: HeaderButtonProps) => {
   };
 
   const onclick = () => {
-    // navigate(toUrl);
+    toUrl && navigate(toUrl);
   };
 
   return actived ? (

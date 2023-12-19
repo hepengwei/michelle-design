@@ -1,0 +1,20 @@
+.container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .poster {
+    @include module2;
+  }
+  .productBrochure {
+    @include module2;
+  }
+  .rollUpBanner {
+    @include module2;
+  }
+  .cultureWall {
+    @include module2;
+    margin-bottom: 50px;
+  }
+}

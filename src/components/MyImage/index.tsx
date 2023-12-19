@@ -7,6 +7,7 @@ interface MyImageProps {
   width?: number;
   height?: number;
   showBgColor?: boolean;
+  noCover?: boolean;
   className?: string;
   style?: Record<string, any>;
 }
@@ -17,6 +18,7 @@ const MyImage = (props: MyImageProps) => {
     width = 0,
     height = 0,
     showBgColor = false,
+    noCover = false,
     className = "",
     style = {},
   } = props;
@@ -46,7 +48,19 @@ const MyImage = (props: MyImageProps) => {
       }
     >
       {imageSrc ? (
-        <img src={imageSrc} alt="" />
+        <img
+          src={imageSrc}
+          alt=""
+          style={
+            !noCover && width && height
+              ? {
+                  width: `${width}px`,
+                  height: `${height}px`,
+                  objectFit: "cover",
+                }
+              : {}
+          }
+        />
       ) : width && height ? (
         <Skeleton.Image
           active={true}
