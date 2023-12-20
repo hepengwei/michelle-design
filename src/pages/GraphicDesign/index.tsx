@@ -7,6 +7,16 @@ import ModuleTitle from "components/ModuleTitle";
 import BorderBox2 from "components/BorderBox2";
 import Footer from "components/Footer";
 import bannerBg from "images/graphicDesign/bannerBg.png";
+import poster1 from "images/graphicDesign/poster1.png";
+import poster2 from "images/graphicDesign/poster2.png";
+import poster3 from "images/graphicDesign/poster3.png";
+import poster4 from "images/graphicDesign/poster4.png";
+import poster5 from "images/graphicDesign/poster5.png";
+import poster6 from "images/graphicDesign/poster6.png";
+import poster7 from "images/graphicDesign/poster7.png";
+import poster8 from "images/graphicDesign/poster8.png";
+import cultureWall1 from "images/graphicDesign/cultureWall1.png";
+import cultureWall2 from "images/graphicDesign/cultureWall2.png";
 import eCommerceDesign1 from "images/eCommerceDesign1.png";
 import styles from "./index.module.scss";
 
@@ -25,18 +35,18 @@ const GraphicDesign = () => {
           <ModuleTitle title="海报" />
           <div className={styles.box}>
             <div className={styles.row}>
-              <BorderBox2 url={eCommerceDesign1} width={585} height={400} />
-              <BorderBox2 url={eCommerceDesign1} width={280} height={400} />
-              <BorderBox2 url={eCommerceDesign1} width={280} height={400} />
+              <BorderBox2 url={poster1} width={585} height={400} />
+              <BorderBox2 url={poster2} width={280} height={400} />
+              <BorderBox2 url={poster3} width={280} height={400} />
             </div>
             <div className={styles.row}>
-              <BorderBox2 url={eCommerceDesign1} width={280} height={400} />
-              <BorderBox2 url={eCommerceDesign1} width={280} height={400} />
-              <BorderBox2 url={eCommerceDesign1} width={585} height={400} />
+              <BorderBox2 url={poster4} width={280} height={400} />
+              <BorderBox2 url={poster5} width={280} height={400} />
+              <BorderBox2 url={poster6} width={585} height={400} />
             </div>
             <div className={styles.row}>
-              <BorderBox2 url={eCommerceDesign1} width={175} height={260} />
-              <BorderBox2 url={eCommerceDesign1} width={175} height={260} />
+              <BorderBox2 url={poster7} width={175} height={260} />
+              <BorderBox2 url={poster8} width={175} height={260} />
               <BorderBox2 url={eCommerceDesign1} width={175} height={260} />
               <BorderBox2 url={eCommerceDesign1} width={175} height={260} />
               <BorderBox2 url={eCommerceDesign1} width={175} height={260} />
@@ -92,8 +102,8 @@ const GraphicDesign = () => {
           <ModuleTitle title="文化墙" />
           <div className={styles.box}>
             <div className={styles.row}>
-              <BorderBox2 url={eCommerceDesign1} width={585} height={400} />
-              <BorderBox2 url={eCommerceDesign1} width={585} height={400} />
+              <BorderBox2 url={cultureWall1} width={585} height={400} />
+              <BorderBox2 url={cultureWall2} width={585} height={400} />
             </div>
           </div>
         </div>
