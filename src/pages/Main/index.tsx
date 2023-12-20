@@ -3,6 +3,7 @@
  */
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Skeleton } from "antd";
 import { DoubleRightOutlined, PlayCircleFilled } from "@ant-design/icons";
 import useAuth from "hooks/useAuth";
 import useImageSrc from "hooks/useImageSrc";
@@ -41,6 +42,9 @@ const Main = () => {
   useAuth();
   const bgSrc = useImageSrc(bg);
   const bannerBgSrc = useImageSrc(bannerBg);
+  const uiDesign1Src = useImageSrc(uiDesign1);
+  const uiDesign2Src = useImageSrc(uiDesign2);
+  const uiDesign3Src = useImageSrc(uiDesign3);
 
   const navigate = useNavigate();
 
@@ -168,7 +172,12 @@ const Main = () => {
           />
           <div className={styles.box}>
             <div className={styles.left}>
-              <div className={styles.topFloor}>
+              <div
+                className={styles.topFloor}
+                onClick={() => {
+                  navigate("/eCommerceDesign");
+                }}
+              >
                 <MyImage src={eCommerceDesign1} width={340} height={420} />
                 <span className={styles.bottomText}>
                   <DoubleRightOutlined />
@@ -178,7 +187,12 @@ const Main = () => {
             </div>
             <div className={styles.middle}>
               <div className={styles.topOrBottom}>
-                <div className={styles.topFloor}>
+                <div
+                  className={styles.topFloor}
+                  onClick={() => {
+                    navigate("/eCommerceDesign");
+                  }}
+                >
                   <MyImage src={eCommerceDesign2} width={400} height={170} />
                   <span className={styles.bottomText}>
                     <DoubleRightOutlined />
@@ -187,7 +201,12 @@ const Main = () => {
                 </div>
               </div>
               <div className={styles.topOrBottom}>
-                <div className={styles.topFloor}>
+                <div
+                  className={styles.topFloor}
+                  onClick={() => {
+                    navigate("/eCommerceDesign");
+                  }}
+                >
                   <MyImage src={eCommerceDesign3} width={400} height={170} />
                   <span className={styles.bottomText}>
                     <DoubleRightOutlined />
@@ -197,7 +216,12 @@ const Main = () => {
               </div>
             </div>
             <div className={styles.right}>
-              <div className={styles.topFloor}>
+              <div
+                className={styles.topFloor}
+                onClick={() => {
+                  navigate("/eCommerceDesign");
+                }}
+              >
                 <MyImage src={eCommerceDesign4} width={340} height={420} />
                 <span className={styles.bottomText}>
                   <DoubleRightOutlined />
@@ -219,39 +243,59 @@ const Main = () => {
           <div className={styles.box}>
             <div className={styles.left}>
               <div className={styles.imgBox}>
-                <div className={styles.shadowBox}>
+                <div
+                  className={styles.shadowBox}
+                  onClick={() => {
+                    navigate("/graphicDesign");
+                  }}
+                >
                   <MyImage src={graphicDesign1} width={440} height={450} />
+                  <span>海报</span>
                 </div>
-                <span>海报</span>
               </div>
               <img src={pin} alt="" className={styles.pin} />
             </div>
             <div className={styles.right}>
               <div className={styles.top}>
                 <div className={styles.imgBox}>
-                  <div className={styles.shadowBox}>
+                  <div
+                    className={styles.shadowBox}
+                    onClick={() => {
+                      navigate("/graphicDesign");
+                    }}
+                  >
                     <MyImage src={graphicDesign2} width={610} height={190} />
+                    <span>产品画册</span>
                   </div>
-                  <span>产品画册</span>
                 </div>
                 <img src={pin} alt="" className={styles.pin} />
               </div>
               <div className={styles.bottom}>
                 <div className={styles.left}>
                   <div className={styles.imgBox}>
-                    <div className={styles.shadowBox}>
+                    <div
+                      className={styles.shadowBox}
+                      onClick={() => {
+                        navigate("/graphicDesign");
+                      }}
+                    >
                       <MyImage src={graphicDesign3} width={265} height={190} />
+                      <span>易拉宝</span>
                     </div>
-                    <span>易拉宝</span>
                   </div>
                   <img src={pin} alt="" className={styles.pin} />
                 </div>
                 <div className={styles.right}>
                   <div className={styles.imgBox}>
-                    <div className={styles.shadowBox}>
+                    <div
+                      className={styles.shadowBox}
+                      onClick={() => {
+                        navigate("/graphicDesign");
+                      }}
+                    >
                       <MyImage src={graphicDesign4} width={265} height={190} />
+                      <span>文化墙</span>
                     </div>
-                    <span>文化墙</span>
                   </div>
                   <img src={pin} alt="" className={styles.pin} />
                 </div>
@@ -270,35 +314,86 @@ const Main = () => {
           />
           <div className={styles.box}>
             <div className={styles.itemBox}>
-              <div className={styles.topBox}>
-                <div className={styles.bottomImgBox}>
-                  <MyImage src={uiDesign1} width={372} height={470} noCover />
-                </div>
-                <div className={styles.topImgBox}>
-                  <MyImage src={uiDesign1} width={372} height={470} noCover />
-                </div>
+              <div
+                className={styles.topBox}
+                onClick={() => {
+                  navigate("/uiDesign");
+                }}
+              >
+                {uiDesign1Src ? (
+                  <>
+                    <div className={styles.bottomImgBox}>
+                      <img src={uiDesign1Src} alt="" />
+                    </div>
+                    <div className={styles.topImgBox}>
+                      <img src={uiDesign1Src} alt="" />
+                    </div>
+                  </>
+                ) : (
+                  <Skeleton.Image
+                    active
+                    style={{
+                      width: "372px",
+                      height: "470px",
+                    }}
+                  />
+                )}
               </div>
               <span className={styles.bottomText}>PC端</span>
             </div>
             <div className={styles.itemBox}>
-              <div className={styles.topBox}>
-                <div className={styles.bottomImgBox}>
-                  <MyImage src={uiDesign2} width={372} height={470} noCover />
-                </div>
-                <div className={styles.topImgBox}>
-                  <MyImage src={uiDesign2} width={372} height={470} noCover />
-                </div>
+              <div
+                className={styles.topBox}
+                onClick={() => {
+                  navigate("/uiDesign");
+                }}
+              >
+                {uiDesign2Src ? (
+                  <>
+                    <div className={styles.bottomImgBox}>
+                      <img src={uiDesign2Src} alt="" />
+                    </div>
+                    <div className={styles.topImgBox}>
+                      <img src={uiDesign2Src} alt="" />
+                    </div>
+                  </>
+                ) : (
+                  <Skeleton.Image
+                    active
+                    style={{
+                      width: "372px",
+                      height: "470px",
+                    }}
+                  />
+                )}
               </div>
               <span className={styles.bottomText}>移动端</span>
             </div>
             <div className={styles.itemBox}>
-              <div className={styles.topBox}>
-                <div className={styles.bottomImgBox}>
-                  <MyImage src={uiDesign3} width={372} height={470} noCover />
-                </div>
-                <div className={styles.topImgBox}>
-                  <MyImage src={uiDesign3} width={372} height={470} noCover />
-                </div>
+              <div
+                className={styles.topBox}
+                onClick={() => {
+                  navigate("/uiDesign");
+                }}
+              >
+                {uiDesign3Src ? (
+                  <>
+                    <div className={styles.bottomImgBox}>
+                      <img src={uiDesign3Src} alt="" />
+                    </div>
+                    <div className={styles.topImgBox}>
+                      <img src={uiDesign3Src} alt="" />
+                    </div>
+                  </>
+                ) : (
+                  <Skeleton.Image
+                    active
+                    style={{
+                      width: "372px",
+                      height: "470px",
+                    }}
+                  />
+                )}
               </div>
               <span className={styles.bottomText}>图标</span>
             </div>
