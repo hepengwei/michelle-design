@@ -4,6 +4,11 @@
   flex-direction: column;
   align-items: center;
 
+  .imgBox {
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.1);
+  }
+
   .pcTerminal {
     @include module3;
     height: 560px;
@@ -14,7 +19,7 @@
     height: 440px;
     min-height: 440px;
   }
-  .icon {
+  .icons {
     @include module3;
     height: 510px;
     min-height: 510px;
