@@ -1,7 +1,8 @@
 /**
  * 平面设计页
  */
-import React from "react";
+import React, { useState } from "react";
+import Viewer from "react-viewer";
 import Banner from "components/Banner";
 import ModuleTitle from "components/ModuleTitle";
 import BorderBox2 from "components/BorderBox2";
@@ -21,6 +22,11 @@ import eCommerceDesign1 from "images/eCommerceDesign1.png";
 import styles from "./index.module.scss";
 
 const GraphicDesign = () => {
+  const [viewerShow1, setViewerShow1] = useState(false);
+  const [viewerShow2, setViewerShow2] = useState(false);
+  const [viewerShow3, setViewerShow3] = useState(false);
+  const [viewerShow4, setViewerShow4] = useState(false);
+
   return (
     <div className={styles.container}>
       <Banner
@@ -35,32 +41,147 @@ const GraphicDesign = () => {
           <ModuleTitle title="海报" />
           <div className={styles.box}>
             <div className={styles.row}>
-              <BorderBox2 url={poster1} width={585} height={400} />
-              <BorderBox2 url={poster2} width={280} height={400} />
-              <BorderBox2 url={poster3} width={280} height={400} />
+              <BorderBox2
+                url={poster1}
+                width={585}
+                height={400}
+                onClick={() => setViewerShow1(true)}
+              />
+              <BorderBox2
+                url={poster2}
+                width={280}
+                height={400}
+                onClick={() => setViewerShow1(true)}
+              />
+              <BorderBox2
+                url={poster3}
+                width={280}
+                height={400}
+                onClick={() => setViewerShow1(true)}
+              />
             </div>
             <div className={styles.row}>
-              <BorderBox2 url={poster4} width={280} height={400} />
-              <BorderBox2 url={poster5} width={280} height={400} />
-              <BorderBox2 url={poster6} width={585} height={400} />
+              <BorderBox2
+                url={poster4}
+                width={280}
+                height={400}
+                onClick={() => setViewerShow1(true)}
+              />
+              <BorderBox2
+                url={poster5}
+                width={280}
+                height={400}
+                onClick={() => setViewerShow1(true)}
+              />
+              <BorderBox2
+                url={poster6}
+                width={585}
+                height={400}
+                onClick={() => setViewerShow1(true)}
+              />
             </div>
             <div className={styles.row}>
-              <BorderBox2 url={poster7} width={175} height={260} />
-              <BorderBox2 url={poster8} width={175} height={260} />
-              <BorderBox2 url={eCommerceDesign1} width={175} height={260} />
-              <BorderBox2 url={eCommerceDesign1} width={175} height={260} />
-              <BorderBox2 url={eCommerceDesign1} width={175} height={260} />
-              <BorderBox2 url={eCommerceDesign1} width={175} height={260} />
+              <BorderBox2
+                url={poster7}
+                width={175}
+                height={260}
+                onClick={() => setViewerShow1(true)}
+              />
+              <BorderBox2
+                url={poster8}
+                width={175}
+                height={260}
+                onClick={() => setViewerShow1(true)}
+              />
+              <BorderBox2
+                url={eCommerceDesign1}
+                width={175}
+                height={260}
+                onClick={() => setViewerShow1(true)}
+              />
+              <BorderBox2
+                url={eCommerceDesign1}
+                width={175}
+                height={260}
+                onClick={() => setViewerShow1(true)}
+              />
+              <BorderBox2
+                url={eCommerceDesign1}
+                width={175}
+                height={260}
+                onClick={() => setViewerShow1(true)}
+              />
+              <BorderBox2
+                url={eCommerceDesign1}
+                width={175}
+                height={260}
+                onClick={() => setViewerShow1(true)}
+              />
             </div>
             <div className={styles.row}>
-              <BorderBox2 url={eCommerceDesign1} width={175} height={260} />
-              <BorderBox2 url={eCommerceDesign1} width={175} height={260} />
-              <BorderBox2 url={eCommerceDesign1} width={175} height={260} />
-              <BorderBox2 url={eCommerceDesign1} width={175} height={260} />
-              <BorderBox2 url={eCommerceDesign1} width={175} height={260} />
-              <BorderBox2 url={eCommerceDesign1} width={175} height={260} />
+              <BorderBox2
+                url={eCommerceDesign1}
+                width={175}
+                height={260}
+                onClick={() => setViewerShow1(true)}
+              />
+              <BorderBox2
+                url={eCommerceDesign1}
+                width={175}
+                height={260}
+                onClick={() => setViewerShow1(true)}
+              />
+              <BorderBox2
+                url={eCommerceDesign1}
+                width={175}
+                height={260}
+                onClick={() => setViewerShow1(true)}
+              />
+              <BorderBox2
+                url={eCommerceDesign1}
+                width={175}
+                height={260}
+                onClick={() => setViewerShow1(true)}
+              />
+              <BorderBox2
+                url={eCommerceDesign1}
+                width={175}
+                height={260}
+                onClick={() => setViewerShow1(true)}
+              />
+              <BorderBox2
+                url={eCommerceDesign1}
+                width={175}
+                height={260}
+                onClick={() => setViewerShow1(true)}
+              />
             </div>
           </div>
+          <Viewer
+            visible={viewerShow1}
+            onClose={() => setViewerShow1(false)}
+            onMaskClick={() => setViewerShow1(false)}
+            images={[
+              { src: poster1, alt: "" },
+              { src: poster2, alt: "" },
+              { src: poster3, alt: "" },
+              { src: poster4, alt: "" },
+              { src: poster5, alt: "" },
+              { src: poster6, alt: "" },
+              { src: poster7, alt: "" },
+              { src: poster8, alt: "" },
+              { src: eCommerceDesign1, alt: "" },
+              { src: eCommerceDesign1, alt: "" },
+              { src: eCommerceDesign1, alt: "" },
+              { src: eCommerceDesign1, alt: "" },
+              { src: eCommerceDesign1, alt: "" },
+              { src: eCommerceDesign1, alt: "" },
+              { src: eCommerceDesign1, alt: "" },
+              { src: eCommerceDesign1, alt: "" },
+              { src: eCommerceDesign1, alt: "" },
+              { src: eCommerceDesign1, alt: "" },
+            ]}
+          />
         </div>
       </div>
       <div className={styles.productBrochure}>
@@ -68,20 +189,63 @@ const GraphicDesign = () => {
           <ModuleTitle title="产品画册" />
           <div className={styles.box}>
             <div className={styles.row}>
-              <BorderBox2 url={eCommerceDesign1} width={585} height={400} />
+              <BorderBox2
+                url={eCommerceDesign1}
+                width={585}
+                height={400}
+                onClick={() => setViewerShow2(true)}
+              />
               <div className={styles.col} style={{ width: 585, height: 400 }}>
-                <BorderBox2 url={eCommerceDesign1} width={585} height={185} />
-                <BorderBox2 url={eCommerceDesign1} width={585} height={185} />
+                <BorderBox2
+                  url={eCommerceDesign1}
+                  width={585}
+                  height={185}
+                  onClick={() => setViewerShow2(true)}
+                />
+                <BorderBox2
+                  url={eCommerceDesign1}
+                  width={585}
+                  height={185}
+                  onClick={() => setViewerShow2(true)}
+                />
               </div>
             </div>
             <div className={styles.row}>
               <div className={styles.col} style={{ width: 585, height: 400 }}>
-                <BorderBox2 url={eCommerceDesign1} width={585} height={185} />
-                <BorderBox2 url={eCommerceDesign1} width={585} height={185} />
+                <BorderBox2
+                  url={eCommerceDesign1}
+                  width={585}
+                  height={185}
+                  onClick={() => setViewerShow2(true)}
+                />
+                <BorderBox2
+                  url={eCommerceDesign1}
+                  width={585}
+                  height={185}
+                  onClick={() => setViewerShow2(true)}
+                />
               </div>
-              <BorderBox2 url={eCommerceDesign1} width={585} height={400} />
+              <BorderBox2
+                url={eCommerceDesign1}
+                width={585}
+                height={400}
+                onClick={() => setViewerShow2(true)}
+              />
             </div>
           </div>
+          <Viewer
+            visible={viewerShow2}
+            onClose={() => setViewerShow2(false)}
+            onMaskClick={() => setViewerShow2(false)}
+            images={[
+              { src: eCommerceDesign1, alt: "" },
+              { src: eCommerceDesign1, alt: "" },
+              { src: eCommerceDesign1, alt: "" },
+              { src: eCommerceDesign1, alt: "" },
+              { src: eCommerceDesign1, alt: "" },
+              { src: eCommerceDesign1, alt: "" },
+            ]}
+          />
         </div>
       </div>
       <div className={styles.rollUpBanner}>
@@ -89,12 +253,43 @@ const GraphicDesign = () => {
           <ModuleTitle title="易拉宝" />
           <div className={styles.box}>
             <div className={styles.row}>
-              <BorderBox2 url={eCommerceDesign1} width={280} height={500} />
-              <BorderBox2 url={eCommerceDesign1} width={280} height={500} />
-              <BorderBox2 url={eCommerceDesign1} width={280} height={500} />
-              <BorderBox2 url={eCommerceDesign1} width={280} height={500} />
+              <BorderBox2
+                url={eCommerceDesign1}
+                width={280}
+                height={500}
+                onClick={() => setViewerShow3(true)}
+              />
+              <BorderBox2
+                url={eCommerceDesign1}
+                width={280}
+                height={500}
+                onClick={() => setViewerShow3(true)}
+              />
+              <BorderBox2
+                url={eCommerceDesign1}
+                width={280}
+                height={500}
+                onClick={() => setViewerShow3(true)}
+              />
+              <BorderBox2
+                url={eCommerceDesign1}
+                width={280}
+                height={500}
+                onClick={() => setViewerShow3(true)}
+              />
             </div>
           </div>
+          <Viewer
+            visible={viewerShow3}
+            onClose={() => setViewerShow3(false)}
+            onMaskClick={() => setViewerShow3(false)}
+            images={[
+              { src: eCommerceDesign1, alt: "" },
+              { src: eCommerceDesign1, alt: "" },
+              { src: eCommerceDesign1, alt: "" },
+              { src: eCommerceDesign1, alt: "" },
+            ]}
+          />
         </div>
       </div>
       <div className={styles.cultureWall}>
@@ -102,10 +297,29 @@ const GraphicDesign = () => {
           <ModuleTitle title="文化墙" />
           <div className={styles.box}>
             <div className={styles.row}>
-              <BorderBox2 url={cultureWall1} width={585} height={400} />
-              <BorderBox2 url={cultureWall2} width={585} height={400} />
+              <BorderBox2
+                url={cultureWall1}
+                width={585}
+                height={400}
+                onClick={() => setViewerShow4(true)}
+              />
+              <BorderBox2
+                url={cultureWall2}
+                width={585}
+                height={400}
+                onClick={() => setViewerShow4(true)}
+              />
             </div>
           </div>
+          <Viewer
+            visible={viewerShow4}
+            onClose={() => setViewerShow4(false)}
+            onMaskClick={() => setViewerShow4(false)}
+            images={[
+              { src: cultureWall1, alt: "" },
+              { src: cultureWall2, alt: "" },
+            ]}
+          />
         </div>
       </div>
       <Footer />

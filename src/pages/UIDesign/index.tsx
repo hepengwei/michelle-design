@@ -1,7 +1,8 @@
 /**
  * UI设计页
  */
-import React from "react";
+import React, { useState } from "react";
+import Viewer from "react-viewer";
 import Banner from "components/Banner";
 import ModuleTitle from "components/ModuleTitle";
 import MyImage from "components/MyImage";
@@ -22,6 +23,10 @@ import icons2 from "images/uiDesign/icons2.png";
 import styles from "./index.module.scss";
 
 const UIDesign = () => {
+  const [viewerShow1, setViewerShow1] = useState(false);
+  const [viewerShow2, setViewerShow2] = useState(false);
+  const [viewerShow3, setViewerShow3] = useState(false);
+
   return (
     <div className={styles.container}>
       <Banner
@@ -35,33 +40,138 @@ const UIDesign = () => {
         <div className={styles.content}>
           <ModuleTitle title="PC端" />
           <div className={styles.box}>
-            <MyImage className={styles.imgBox} src={pcTerminal1} width={285} height={400} />
-            <MyImage className={styles.imgBox} src={pcTerminal2} width={285} height={400} />
-            <MyImage className={styles.imgBox} src={pcTerminal3} width={285} height={400} />
-            <MyImage className={styles.imgBox} src={pcTerminal4} width={285} height={400} />
+            <MyImage
+              className={styles.imgBox}
+              src={pcTerminal1}
+              width={285}
+              height={400}
+              onClick={() => setViewerShow1(true)}
+            />
+            <MyImage
+              className={styles.imgBox}
+              src={pcTerminal2}
+              width={285}
+              height={400}
+              onClick={() => setViewerShow1(true)}
+            />
+            <MyImage
+              className={styles.imgBox}
+              src={pcTerminal3}
+              width={285}
+              height={400}
+              onClick={() => setViewerShow1(true)}
+            />
+            <MyImage
+              className={styles.imgBox}
+              src={pcTerminal4}
+              width={285}
+              height={400}
+              onClick={() => setViewerShow1(true)}
+            />
           </div>
+          <Viewer
+            visible={viewerShow1}
+            onClose={() => setViewerShow1(false)}
+            onMaskClick={() => setViewerShow1(false)}
+            images={[
+              { src: pcTerminal1, alt: "" },
+              { src: pcTerminal2, alt: "" },
+              { src: pcTerminal3, alt: "" },
+              { src: pcTerminal4, alt: "" },
+            ]}
+          />
         </div>
       </div>
       <div className={styles.mobileTerminal}>
         <div className={styles.content}>
           <ModuleTitle title="移动端" />
           <div className={styles.box}>
-            <MyImage className={styles.imgBox} src={mobileTerminal1} width={175} height={280} />
-            <MyImage className={styles.imgBox} src={mobileTerminal2} width={175} height={280} />
-            <MyImage className={styles.imgBox} src={mobileTerminal3} width={175} height={280} />
-            <MyImage className={styles.imgBox} src={mobileTerminal4} width={175} height={280} />
-            <MyImage className={styles.imgBox} src={mobileTerminal5} width={175} height={280} />
-            <MyImage className={styles.imgBox} src={mobileTerminal6} width={175} height={280} />
+            <MyImage
+              className={styles.imgBox}
+              src={mobileTerminal1}
+              width={175}
+              height={280}
+              onClick={() => setViewerShow2(true)}
+            />
+            <MyImage
+              className={styles.imgBox}
+              src={mobileTerminal2}
+              width={175}
+              height={280}
+              onClick={() => setViewerShow2(true)}
+            />
+            <MyImage
+              className={styles.imgBox}
+              src={mobileTerminal3}
+              width={175}
+              height={280}
+              onClick={() => setViewerShow2(true)}
+            />
+            <MyImage
+              className={styles.imgBox}
+              src={mobileTerminal4}
+              width={175}
+              height={280}
+              onClick={() => setViewerShow2(true)}
+            />
+            <MyImage
+              className={styles.imgBox}
+              src={mobileTerminal5}
+              width={175}
+              height={280}
+              onClick={() => setViewerShow2(true)}
+            />
+            <MyImage
+              className={styles.imgBox}
+              src={mobileTerminal6}
+              width={175}
+              height={280}
+              onClick={() => setViewerShow2(true)}
+            />
           </div>
+          <Viewer
+            visible={viewerShow2}
+            onClose={() => setViewerShow2(false)}
+            onMaskClick={() => setViewerShow2(false)}
+            images={[
+              { src: mobileTerminal1, alt: "" },
+              { src: mobileTerminal2, alt: "" },
+              { src: mobileTerminal3, alt: "" },
+              { src: mobileTerminal4, alt: "" },
+              { src: mobileTerminal5, alt: "" },
+              { src: mobileTerminal6, alt: "" },
+            ]}
+          />
         </div>
       </div>
       <div className={styles.icons}>
         <div className={styles.content}>
           <ModuleTitle title="图标" />
           <div className={styles.box}>
-            <MyImage className={styles.imgBox} src={icons1} width={585} height={350} />
-            <MyImage className={styles.imgBox} src={icons2} width={585} height={350} />
+            <MyImage
+              className={styles.imgBox}
+              src={icons1}
+              width={585}
+              height={350}
+              onClick={() => setViewerShow3(true)}
+            />
+            <MyImage
+              className={styles.imgBox}
+              src={icons2}
+              width={585}
+              height={350}
+              onClick={() => setViewerShow3(true)}
+            />
           </div>
+          <Viewer
+            visible={viewerShow3}
+            onClose={() => setViewerShow3(false)}
+            onMaskClick={() => setViewerShow3(false)}
+            images={[
+              { src: icons1, alt: "" },
+              { src: icons2, alt: "" },
+            ]}
+          />
         </div>
       </div>
       <Footer />

@@ -1,5 +1,5 @@
 // @ts-nocheck
-import React, { useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import {
   useRoutes,
   useLocation,
@@ -26,6 +26,7 @@ const Home = () => {
   if (!isDev) {
     useGoogleAnalytics();
   }
+  const containerContentRef = useRef<HTMLDivElement>(null);
   const contentRoutes = useRoutes(contentRoutesConfig);
   const [search] = useSearchParams();
   const location = useLocation();
@@ -41,14 +42,19 @@ const Home = () => {
       } else {
         navigate("/login");
       }
-    } else if (!pathname || pathname === "/") {
-      navigate(DEFAULT_PAGE_URL);
+    } else {
+      if (containerContentRef.current) {
+        (containerContentRef.current as HTMLDivElement).scrollTop = 0;
+      }
+      if (!pathname || pathname === "/") {
+        navigate(DEFAULT_PAGE_URL);
+      }
     }
   }, [location]);
 
   return (
     <div className={styles.container}>
-      <div className={styles.container_content}>
+      <div className={styles.container_content} ref={containerContentRef}>
         {location && showHeaderPaths.includes(location.pathname) && <Header />}
         {contentRoutes}
       </div>
