@@ -9,7 +9,7 @@ interface MyImageProps {
   height?: number;
   showBgColor?: boolean;
   noCover?: boolean;
-  toUrl?: string;
+  onClick?: () => void;
   className?: string;
   style?: Record<string, any>;
 }
@@ -21,16 +21,11 @@ const MyImage = (props: MyImageProps) => {
     height = 0,
     showBgColor = false,
     noCover = false,
-    toUrl,
     className = "",
     style = {},
+    onClick,
   } = props;
   const imageSrc = useImageSrc(src);
-  const navigate = useNavigate();
-
-  const onclick = () => {
-    toUrl && navigate(toUrl);
-  };
 
   return (
     <div
@@ -44,7 +39,7 @@ const MyImage = (props: MyImageProps) => {
               backgroundColor: showBgColor ? "#F0F0F0" : "noset",
               width: `${width}px`,
               height: `${height}px`,
-              cursor: toUrl ? "pointer" : "noset",
+              cursor: onClick ? "pointer" : "noset",
               ...style,
             }
           : {
@@ -52,11 +47,11 @@ const MyImage = (props: MyImageProps) => {
               justifyContent: "center",
               alignItems: "center",
               backgroundColor: showBgColor ? "#F0F0F0" : "noset",
-              cursor: toUrl ? "pointer" : "noset",
+              cursor: onClick ? "pointer" : "noset",
               ...style,
             }
       }
-      onClick={onclick}
+      onClick={() => onClick?.()}
     >
       {imageSrc ? (
         <img

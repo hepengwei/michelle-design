@@ -52,7 +52,6 @@ const Header = () => {
             toUrl="/uiDesign"
             actived={location.pathname === "/uiDesign"}
           />
-          <HeaderButton text="视频制作" toUrl="" />
         </div>
       </div>
     </div>

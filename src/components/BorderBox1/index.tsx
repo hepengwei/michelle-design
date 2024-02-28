@@ -8,15 +8,17 @@ interface BorderBoxProps {
   url: string;
   width: number;
   height: number;
+  onClick?: () => void;
   className?: string;
 }
 
 const BorderBox1 = (props: BorderBoxProps) => {
-  const { url, width, height, className } = props;
+  const { url, width, height, className, onClick } = props;
   return (
     <div
       className={`${styles.container} ${className}`}
-      style={{ width, height }}
+      style={{ width, height, cursor: onClick ? "pointer" : "noset" }}
+      onClick={() => onClick?.()}
     >
       <MyImage
         src={url}

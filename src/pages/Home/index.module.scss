@@ -3,7 +3,8 @@
   height: 100vh;
   .container_content {
     width: 100vw;
-    min-height: 100vh;
+    height: 100vh;
+    display: block;
     min-width: 1200px !important;
     overflow-y: auto;
 

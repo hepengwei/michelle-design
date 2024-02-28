@@ -4,6 +4,10 @@
   flex-direction: column;
   align-items: center;
 
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   .poster {
     @include module2;
   }
