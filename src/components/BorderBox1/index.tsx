@@ -8,12 +8,13 @@ interface BorderBoxProps {
   url: string;
   width: number;
   height: number;
+  centerTop?: boolean;
   onClick?: () => void;
   className?: string;
 }
 
 const BorderBox1 = (props: BorderBoxProps) => {
-  const { url, width, height, className, onClick } = props;
+  const { url, width, height, centerTop = false, className, onClick } = props;
   return (
     <div
       className={`${styles.container} ${className}`}
@@ -24,6 +25,7 @@ const BorderBox1 = (props: BorderBoxProps) => {
         src={url}
         width={width - padding * 2}
         height={height - padding * 2}
+        centerTop={centerTop}
       />
     </div>
   );

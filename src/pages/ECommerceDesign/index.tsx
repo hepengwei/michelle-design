@@ -9,6 +9,7 @@ import BorderBox1 from "components/BorderBox1";
 import Footer from "components/Footer";
 import bannerBg from "images/eCommerceDesign/bannerBg.png";
 import eCommerceDesign1 from "images/eCommerceDesign1.png";
+import shopHomepage1 from "images/eCommerceDesign/shopHomepage1.jpg";
 import styles from "./index.module.scss";
 
 const ECommerceDesign = () => {
@@ -32,9 +33,10 @@ const ECommerceDesign = () => {
           <div className={styles.box}>
             <div className={styles.row}>
               <BorderBox1
-                url={eCommerceDesign1}
+                url={shopHomepage1}
                 width={380}
                 height={500}
+                centerTop
                 onClick={() => setViewerShow1(true)}
               />
               <BorderBox1
@@ -76,7 +78,7 @@ const ECommerceDesign = () => {
             onClose={() => setViewerShow1(false)}
             onMaskClick={() => setViewerShow1(false)}
             images={[
-              { src: eCommerceDesign1, alt: "" },
+              { src: shopHomepage1, alt: "" },
               { src: eCommerceDesign1, alt: "" },
               { src: eCommerceDesign1, alt: "" },
               { src: eCommerceDesign1, alt: "" },

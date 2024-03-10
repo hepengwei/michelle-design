@@ -9,6 +9,7 @@ interface MyImageProps {
   height?: number;
   showBgColor?: boolean;
   noCover?: boolean;
+  centerTop?: boolean; // 图片整体位置左右居中，从上到下
   onClick?: () => void;
   className?: string;
   style?: Record<string, any>;
@@ -21,6 +22,7 @@ const MyImage = (props: MyImageProps) => {
     height = 0,
     showBgColor = false,
     noCover = false,
+    centerTop = false,
     className = "",
     style = {},
     onClick,
@@ -35,17 +37,18 @@ const MyImage = (props: MyImageProps) => {
           ? {
               display: "flex",
               justifyContent: "center",
-              alignItems: "center",
+              alignItems: centerTop ? "flex-start" : "center",
               backgroundColor: showBgColor ? "#F0F0F0" : "noset",
               width: `${width}px`,
               height: `${height}px`,
+              overflow: "hidden",
               cursor: onClick ? "pointer" : "noset",
               ...style,
             }
           : {
               display: "flex",
               justifyContent: "center",
-              alignItems: "center",
+              alignItems: centerTop ? "flex-start" : "center",
               backgroundColor: showBgColor ? "#F0F0F0" : "noset",
               cursor: onClick ? "pointer" : "noset",
               ...style,
@@ -59,11 +62,13 @@ const MyImage = (props: MyImageProps) => {
           alt=""
           style={
             !noCover && width && height
-              ? {
-                  width: `${width}px`,
-                  height: `${height}px`,
-                  objectFit: "cover",
-                }
+              ? centerTop
+                ? { width: `${width}px`, height: "auto" }
+                : {
+                    width: `${width}px`,
+                    height: `${height}px`,
+                    objectFit: "cover",
+                  }
               : {}
           }
         />
