@@ -481,8 +481,11 @@
         width: 100%;
         height: $boxHeight;
 
+        $imgWidth: 380px;
         .itemBox {
-          width: 372px;
+          width: $imgWidth;
+          min-width: $imgWidth;
+          max-width: $imgWidth;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -529,7 +532,7 @@
               box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.2);
               img {
                 position: absolute;
-                width: 380px;
+                width: $imgWidth;
                 height: 470px;
                 top: -10px;
                 left: -50px;
@@ -620,6 +623,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.5s;
           }
           svg {
             position: absolute;
@@ -631,6 +635,13 @@
             right: 0;
             margin: auto;
             color: rgba(255, 255, 255, 0.5);
+            pointer-events: none;
+          }
+
+          :hover {
+            img {
+              transform: scale(1.2);
+            }
           }
         }
       }

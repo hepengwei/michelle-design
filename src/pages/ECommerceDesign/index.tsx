@@ -40,7 +40,7 @@ const ECommerceDesign = () => {
                 onClick={() => setViewerShow1(true)}
               />
               <BorderBox1
-                url={eCommerceDesign1}
+                url={shopHomepage1}
                 width={380}
                 height={500}
                 onClick={() => setViewerShow1(true)}
