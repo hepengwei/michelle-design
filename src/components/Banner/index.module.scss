@@ -7,7 +7,7 @@
   position: relative;
 
   &::before {
-    content: attr(data-englishTitle);
+    content: attr(data-englishtitle);
     font-size: 80px;
     font-family: "HarmonyOS_Sans_Thin";
     font-weight: 300;

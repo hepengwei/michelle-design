@@ -1,6 +1,5 @@
 import React from "react";
 import { Skeleton } from "antd";
-import { useNavigate } from "react-router-dom";
 import useImageSrc from "@/hooks/useImageSrc";
 
 interface MyImageProps {
@@ -9,7 +8,7 @@ interface MyImageProps {
   height?: number;
   showBgColor?: boolean;
   noCover?: boolean;
-  centerTop?: boolean; // 图片整体位置左右居中，从上到下
+  centerTop?: boolean; // 图片整体位置左右居中，从上到下，默认为false，上下左右都居中
   onClick?: () => void;
   className?: string;
   style?: Record<string, any>;

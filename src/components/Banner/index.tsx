@@ -25,7 +25,7 @@ const Banner = (props: BannerProps) => {
             }
           : { backgroundColor }
       }
-      data-englishTitle={englishTitle}
+      data-englishtitle={englishTitle}
     >
       <div className={styles.box}>
         <span className={styles.title}>{title}</span>
