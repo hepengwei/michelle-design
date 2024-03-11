@@ -1,12 +1,16 @@
 .container {
-  border: 1px solid #aaa;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #f5f5f5;
-  box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
 
   img {
     object-fit: cover;
+  }
+
+  &:hover {
+    transform: scale(1.04);
   }
 }
