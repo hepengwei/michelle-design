@@ -60,18 +60,21 @@ const GraphicDesign = () => {
             <div className={styles.row}>
               <BorderBox2
                 url={poster1}
+                borderType={1}
                 width={585}
                 height={400}
                 onClick={() => setViewerShow1(true)}
               />
               <BorderBox2
                 url={poster2}
+                borderType={2}
                 width={280}
                 height={400}
                 onClick={() => setViewerShow1(true)}
               />
               <BorderBox2
                 url={poster3}
+                borderType={2}
                 width={280}
                 height={400}
                 onClick={() => setViewerShow1(true)}
@@ -80,18 +83,21 @@ const GraphicDesign = () => {
             <div className={styles.row}>
               <BorderBox2
                 url={poster4}
+                borderType={2}
                 width={280}
                 height={400}
                 onClick={() => setViewerShow1(true)}
               />
               <BorderBox2
                 url={poster5}
+                borderType={2}
                 width={280}
                 height={400}
                 onClick={() => setViewerShow1(true)}
               />
               <BorderBox2
                 url={poster6}
+                borderType={1}
                 width={585}
                 height={400}
                 onClick={() => setViewerShow1(true)}
@@ -100,36 +106,42 @@ const GraphicDesign = () => {
             <div className={styles.row}>
               <BorderBox2
                 url={poster7}
+                borderType={3}
                 width={175}
                 height={260}
                 onClick={() => setViewerShow1(true)}
               />
               <BorderBox2
                 url={poster8}
+                borderType={3}
                 width={175}
                 height={260}
                 onClick={() => setViewerShow1(true)}
               />
               <BorderBox2
                 url={eCommerceDesign1}
+                borderType={3}
                 width={175}
                 height={260}
                 onClick={() => setViewerShow1(true)}
               />
               <BorderBox2
                 url={eCommerceDesign1}
+                borderType={3}
                 width={175}
                 height={260}
                 onClick={() => setViewerShow1(true)}
               />
               <BorderBox2
                 url={eCommerceDesign1}
+                borderType={3}
                 width={175}
                 height={260}
                 onClick={() => setViewerShow1(true)}
               />
               <BorderBox2
                 url={eCommerceDesign1}
+                borderType={3}
                 width={175}
                 height={260}
                 onClick={() => setViewerShow1(true)}
@@ -138,36 +150,42 @@ const GraphicDesign = () => {
             <div className={styles.row}>
               <BorderBox2
                 url={eCommerceDesign1}
+                borderType={3}
                 width={175}
                 height={260}
                 onClick={() => setViewerShow1(true)}
               />
               <BorderBox2
                 url={eCommerceDesign1}
+                borderType={3}
                 width={175}
                 height={260}
                 onClick={() => setViewerShow1(true)}
               />
               <BorderBox2
                 url={eCommerceDesign1}
+                borderType={3}
                 width={175}
                 height={260}
                 onClick={() => setViewerShow1(true)}
               />
               <BorderBox2
                 url={eCommerceDesign1}
+                borderType={3}
                 width={175}
                 height={260}
                 onClick={() => setViewerShow1(true)}
               />
               <BorderBox2
                 url={eCommerceDesign1}
+                borderType={3}
                 width={175}
                 height={260}
                 onClick={() => setViewerShow1(true)}
               />
               <BorderBox2
                 url={eCommerceDesign1}
+                borderType={3}
                 width={175}
                 height={260}
                 onClick={() => setViewerShow1(true)}
@@ -208,6 +226,7 @@ const GraphicDesign = () => {
             <div className={styles.row}>
               <BorderBox2
                 url={albumOfPainting1}
+                borderType={1}
                 width={585}
                 height={400}
                 centerTop
@@ -216,6 +235,7 @@ const GraphicDesign = () => {
               <div className={styles.col} style={{ width: 585, height: 400 }}>
                 <BorderBox2
                   url={albumOfPainting2}
+                  borderType={4}
                   width={585}
                   height={185}
                   centerTop
@@ -223,6 +243,7 @@ const GraphicDesign = () => {
                 />
                 <BorderBox2
                   url={albumOfPainting3}
+                  borderType={4}
                   width={585}
                   height={185}
                   centerTop
@@ -234,6 +255,7 @@ const GraphicDesign = () => {
               <div className={styles.col} style={{ width: 585, height: 400 }}>
                 <BorderBox2
                   url={albumOfPainting4}
+                  borderType={4}
                   width={585}
                   height={185}
                   centerTop
@@ -241,6 +263,7 @@ const GraphicDesign = () => {
                 />
                 <BorderBox2
                   url={albumOfPainting5}
+                  borderType={4}
                   width={585}
                   height={185}
                   centerTop
@@ -249,6 +272,7 @@ const GraphicDesign = () => {
               </div>
               <BorderBox2
                 url={albumOfPainting6}
+                borderType={1}
                 width={585}
                 height={400}
                 centerTop
@@ -280,6 +304,7 @@ const GraphicDesign = () => {
             <div className={styles.row}>
               <BorderBox2
                 url={rollUpBanner1}
+                borderType={5}
                 width={280}
                 height={500}
                 centerTop
@@ -287,6 +312,7 @@ const GraphicDesign = () => {
               />
               <BorderBox2
                 url={rollUpBanner2}
+                borderType={5}
                 width={280}
                 height={500}
                 centerTop
@@ -294,6 +320,7 @@ const GraphicDesign = () => {
               />
               <BorderBox2
                 url={rollUpBanner4}
+                borderType={5}
                 width={280}
                 height={500}
                 centerTop
@@ -301,6 +328,7 @@ const GraphicDesign = () => {
               />
               <BorderBox2
                 url={rollUpBanner5}
+                borderType={5}
                 width={280}
                 height={500}
                 centerTop
@@ -329,12 +357,14 @@ const GraphicDesign = () => {
             <div className={styles.row}>
               <BorderBox2
                 url={cultureWall1}
+                borderType={1}
                 width={585}
                 height={400}
                 onClick={() => setViewerShow4(true)}
               />
               <BorderBox2
                 url={cultureWall2}
+                borderType={1}
                 width={585}
                 height={400}
                 onClick={() => setViewerShow4(true)}

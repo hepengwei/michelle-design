@@ -70,6 +70,7 @@ const ECommerceDesign = () => {
             <div className={styles.row}>
               <BorderBox1
                 url={shopHomepage1}
+                borderType={1}
                 width={380}
                 height={500}
                 centerTop
@@ -77,6 +78,7 @@ const ECommerceDesign = () => {
               />
               <BorderBox1
                 url={shopHomepage2}
+                borderType={1}
                 width={380}
                 height={500}
                 centerTop
@@ -84,6 +86,7 @@ const ECommerceDesign = () => {
               />
               <BorderBox1
                 url={shopHomepage3}
+                borderType={1}
                 width={380}
                 height={500}
                 centerTop
@@ -93,6 +96,7 @@ const ECommerceDesign = () => {
             <div className={styles.row}>
               <BorderBox1
                 url={shopHomepage4}
+                borderType={1}
                 width={380}
                 height={500}
                 centerTop
@@ -100,6 +104,7 @@ const ECommerceDesign = () => {
               />
               <BorderBox1
                 url={shopHomepage5}
+                borderType={1}
                 width={380}
                 height={500}
                 centerTop
@@ -107,6 +112,7 @@ const ECommerceDesign = () => {
               />
               <BorderBox1
                 url={shopHomepage6}
+                borderType={1}
                 width={380}
                 height={500}
                 centerTop
@@ -138,12 +144,14 @@ const ECommerceDesign = () => {
             <div className={styles.row}>
               <BorderBox1
                 url={banner1}
+                borderType={2}
                 width={585}
                 height={200}
                 onClick={() => setViewerShow2(true)}
               />
               <BorderBox1
                 url={banner2}
+                borderType={2}
                 width={585}
                 height={200}
                 onClick={() => setViewerShow2(true)}
@@ -152,12 +160,14 @@ const ECommerceDesign = () => {
             <div className={styles.row}>
               <BorderBox1
                 url={banner3}
+                borderType={2}
                 width={585}
                 height={200}
                 onClick={() => setViewerShow2(true)}
               />
               <BorderBox1
                 url={banner4}
+                borderType={2}
                 width={585}
                 height={200}
                 onClick={() => setViewerShow2(true)}
@@ -166,12 +176,14 @@ const ECommerceDesign = () => {
             <div className={styles.row}>
               <BorderBox1
                 url={banner5}
+                borderType={2}
                 width={585}
                 height={200}
                 onClick={() => setViewerShow2(true)}
               />
               <BorderBox1
                 url={banner6}
+                borderType={2}
                 width={585}
                 height={200}
                 onClick={() => setViewerShow2(true)}
@@ -206,18 +218,21 @@ const ECommerceDesign = () => {
             <div className={styles.row}>
               <BorderBox1
                 url={masterImage1}
+                borderType={3}
                 width={380}
                 height={380}
                 onClick={() => setViewerShow3(true)}
               />
               <BorderBox1
                 url={masterImage2}
+                borderType={3}
                 width={380}
                 height={380}
                 onClick={() => setViewerShow3(true)}
               />
               <BorderBox1
                 url={masterImage3}
+                borderType={3}
                 width={380}
                 height={380}
                 onClick={() => setViewerShow3(true)}
@@ -226,18 +241,21 @@ const ECommerceDesign = () => {
             <div className={styles.row}>
               <BorderBox1
                 url={masterImage4}
+                borderType={3}
                 width={380}
                 height={380}
                 onClick={() => setViewerShow3(true)}
               />
               <BorderBox1
                 url={masterImage5}
+                borderType={3}
                 width={380}
                 height={380}
                 onClick={() => setViewerShow3(true)}
               />
               <BorderBox1
                 url={masterImage6}
+                borderType={3}
                 width={380}
                 height={380}
                 onClick={() => setViewerShow3(true)}
@@ -270,6 +288,7 @@ const ECommerceDesign = () => {
             <div className={styles.row}>
               <BorderBox1
                 url={detail1}
+                borderType={1}
                 width={380}
                 height={500}
                 centerTop
@@ -277,6 +296,7 @@ const ECommerceDesign = () => {
               />
               <BorderBox1
                 url={detail2}
+                borderType={1}
                 width={380}
                 height={500}
                 centerTop
@@ -284,6 +304,7 @@ const ECommerceDesign = () => {
               />
               <BorderBox1
                 url={detail3}
+                borderType={1}
                 width={380}
                 height={500}
                 centerTop
@@ -293,6 +314,7 @@ const ECommerceDesign = () => {
             <div className={styles.row}>
               <BorderBox1
                 url={detail4}
+                borderType={1}
                 width={380}
                 height={500}
                 centerTop
@@ -300,6 +322,7 @@ const ECommerceDesign = () => {
               />
               <BorderBox1
                 url={detail5}
+                borderType={1}
                 width={380}
                 height={500}
                 centerTop
@@ -307,6 +330,7 @@ const ECommerceDesign = () => {
               />
               <BorderBox1
                 url={detail6}
+                borderType={1}
                 width={380}
                 height={500}
                 centerTop
