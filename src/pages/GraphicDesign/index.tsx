@@ -16,8 +16,25 @@ import poster5 from "images/graphicDesign/poster5.png";
 import poster6 from "images/graphicDesign/poster6.png";
 import poster7 from "images/graphicDesign/poster7.png";
 import poster8 from "images/graphicDesign/poster8.png";
+import albumOfPainting1 from "images/graphicDesign/albumOfPainting1.jpg";
+import albumOfPainting2 from "images/graphicDesign/albumOfPainting2.jpg";
+import albumOfPainting3 from "images/graphicDesign/albumOfPainting3.jpg";
+import albumOfPainting4 from "images/graphicDesign/albumOfPainting4.jpg";
+import albumOfPainting5 from "images/graphicDesign/albumOfPainting5.jpg";
+import albumOfPainting6 from "images/graphicDesign/albumOfPainting6.jpg";
+import albumOfPainting7 from "images/graphicDesign/albumOfPainting7.jpg";
+import albumOfPainting8 from "images/graphicDesign/albumOfPainting8.jpg";
+import rollUpBanner1 from "images/graphicDesign/rollUpBanner1.jpeg";
+import rollUpBanner2 from "images/graphicDesign/rollUpBanner2.jpg";
+import rollUpBanner3 from "images/graphicDesign/rollUpBanner3.jpg";
+import rollUpBanner4 from "images/graphicDesign/rollUpBanner4.jpeg";
+import rollUpBanner5 from "images/graphicDesign/rollUpBanner5.jpeg";
 import cultureWall1 from "images/graphicDesign/cultureWall1.png";
 import cultureWall2 from "images/graphicDesign/cultureWall2.png";
+import cultureWall3 from "images/graphicDesign/cultureWall3.png";
+import cultureWall4 from "images/graphicDesign/cultureWall4.jpeg";
+import cultureWall5 from "images/graphicDesign/cultureWall5.jpeg";
+import cultureWall6 from "images/graphicDesign/cultureWall6.jpeg";
 import eCommerceDesign1 from "images/eCommerceDesign1.png";
 import styles from "./index.module.scss";
 
@@ -190,22 +207,25 @@ const GraphicDesign = () => {
           <div className={styles.box}>
             <div className={styles.row}>
               <BorderBox2
-                url={eCommerceDesign1}
+                url={albumOfPainting1}
                 width={585}
                 height={400}
+                centerTop
                 onClick={() => setViewerShow2(true)}
               />
               <div className={styles.col} style={{ width: 585, height: 400 }}>
                 <BorderBox2
-                  url={eCommerceDesign1}
+                  url={albumOfPainting2}
                   width={585}
                   height={185}
+                  centerTop
                   onClick={() => setViewerShow2(true)}
                 />
                 <BorderBox2
-                  url={eCommerceDesign1}
+                  url={albumOfPainting3}
                   width={585}
                   height={185}
+                  centerTop
                   onClick={() => setViewerShow2(true)}
                 />
               </div>
@@ -213,22 +233,25 @@ const GraphicDesign = () => {
             <div className={styles.row}>
               <div className={styles.col} style={{ width: 585, height: 400 }}>
                 <BorderBox2
-                  url={eCommerceDesign1}
+                  url={albumOfPainting4}
                   width={585}
                   height={185}
+                  centerTop
                   onClick={() => setViewerShow2(true)}
                 />
                 <BorderBox2
-                  url={eCommerceDesign1}
+                  url={albumOfPainting5}
                   width={585}
                   height={185}
+                  centerTop
                   onClick={() => setViewerShow2(true)}
                 />
               </div>
               <BorderBox2
-                url={eCommerceDesign1}
+                url={albumOfPainting6}
                 width={585}
                 height={400}
+                centerTop
                 onClick={() => setViewerShow2(true)}
               />
             </div>
@@ -238,12 +261,14 @@ const GraphicDesign = () => {
             onClose={() => setViewerShow2(false)}
             onMaskClick={() => setViewerShow2(false)}
             images={[
-              { src: eCommerceDesign1, alt: "" },
-              { src: eCommerceDesign1, alt: "" },
-              { src: eCommerceDesign1, alt: "" },
-              { src: eCommerceDesign1, alt: "" },
-              { src: eCommerceDesign1, alt: "" },
-              { src: eCommerceDesign1, alt: "" },
+              { src: albumOfPainting1, alt: "" },
+              { src: albumOfPainting2, alt: "" },
+              { src: albumOfPainting3, alt: "" },
+              { src: albumOfPainting4, alt: "" },
+              { src: albumOfPainting5, alt: "" },
+              { src: albumOfPainting6, alt: "" },
+              { src: albumOfPainting7, alt: "" },
+              { src: albumOfPainting8, alt: "" },
             ]}
           />
         </div>
@@ -254,27 +279,31 @@ const GraphicDesign = () => {
           <div className={styles.box}>
             <div className={styles.row}>
               <BorderBox2
-                url={eCommerceDesign1}
+                url={rollUpBanner1}
                 width={280}
                 height={500}
+                centerTop
                 onClick={() => setViewerShow3(true)}
               />
               <BorderBox2
-                url={eCommerceDesign1}
+                url={rollUpBanner2}
                 width={280}
                 height={500}
+                centerTop
                 onClick={() => setViewerShow3(true)}
               />
               <BorderBox2
-                url={eCommerceDesign1}
+                url={rollUpBanner4}
                 width={280}
                 height={500}
+                centerTop
                 onClick={() => setViewerShow3(true)}
               />
               <BorderBox2
-                url={eCommerceDesign1}
+                url={rollUpBanner5}
                 width={280}
                 height={500}
+                centerTop
                 onClick={() => setViewerShow3(true)}
               />
             </div>
@@ -284,10 +313,11 @@ const GraphicDesign = () => {
             onClose={() => setViewerShow3(false)}
             onMaskClick={() => setViewerShow3(false)}
             images={[
-              { src: eCommerceDesign1, alt: "" },
-              { src: eCommerceDesign1, alt: "" },
-              { src: eCommerceDesign1, alt: "" },
-              { src: eCommerceDesign1, alt: "" },
+              { src: rollUpBanner1, alt: "" },
+              { src: rollUpBanner2, alt: "" },
+              { src: rollUpBanner3, alt: "" },
+              { src: rollUpBanner4, alt: "" },
+              { src: rollUpBanner5, alt: "" },
             ]}
           />
         </div>
@@ -318,6 +348,10 @@ const GraphicDesign = () => {
             images={[
               { src: cultureWall1, alt: "" },
               { src: cultureWall2, alt: "" },
+              { src: cultureWall3, alt: "" },
+              { src: cultureWall4, alt: "" },
+              { src: cultureWall5, alt: "" },
+              { src: cultureWall6, alt: "" },
             ]}
           />
         </div>

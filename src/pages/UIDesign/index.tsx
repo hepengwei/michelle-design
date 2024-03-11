@@ -8,16 +8,21 @@ import ModuleTitle from "components/ModuleTitle";
 import MyImage from "components/MyImage";
 import Footer from "components/Footer";
 import bannerBg from "images/uiDesign/bannerBg.png";
-import pcTerminal1 from "images/uiDesign/pcTerminal1.png";
+import pcTerminal1 from "images/uiDesign/pcTerminal1.jpg";
 import pcTerminal2 from "images/uiDesign/pcTerminal2.png";
 import pcTerminal3 from "images/uiDesign/pcTerminal3.png";
-import pcTerminal4 from "images/uiDesign/pcTerminal4.png";
-import mobileTerminal1 from "images/uiDesign/mobileTerminal1.png";
-import mobileTerminal2 from "images/uiDesign/mobileTerminal2.png";
-import mobileTerminal3 from "images/uiDesign/mobileTerminal3.png";
-import mobileTerminal4 from "images/uiDesign/mobileTerminal4.png";
-import mobileTerminal5 from "images/uiDesign/mobileTerminal5.png";
-import mobileTerminal6 from "images/uiDesign/mobileTerminal6.png";
+import pcTerminal4 from "images/uiDesign/pcTerminal4.jpg";
+import pcTerminal5 from "images/uiDesign/pcTerminal5.png";
+import pcTerminal6 from "images/uiDesign/pcTerminal6.jpg";
+import pcTerminal7 from "images/uiDesign/pcTerminal7.jpg";
+import pcTerminal8 from "images/uiDesign/pcTerminal8.png";
+import mobileTerminal1 from "images/uiDesign/mobileTerminal1.jpg";
+import mobileTerminal2 from "images/uiDesign/mobileTerminal2.jpg";
+import mobileTerminal3 from "images/uiDesign/mobileTerminal3.jpg";
+import mobileTerminal4 from "images/uiDesign/mobileTerminal4.jpg";
+import mobileTerminal5 from "images/uiDesign/mobileTerminal5.jpg";
+import mobileTerminal6 from "images/uiDesign/mobileTerminal6.jpg";
+import mobileTerminal7 from "images/uiDesign/mobileTerminal7.jpg";
 import icons1 from "images/uiDesign/icons1.png";
 import icons2 from "images/uiDesign/icons2.png";
 import styles from "./index.module.scss";
@@ -45,6 +50,7 @@ const UIDesign = () => {
               src={pcTerminal1}
               width={285}
               height={400}
+              centerTop
               onClick={() => setViewerShow1(true)}
             />
             <MyImage
@@ -52,6 +58,7 @@ const UIDesign = () => {
               src={pcTerminal2}
               width={285}
               height={400}
+              centerTop
               onClick={() => setViewerShow1(true)}
             />
             <MyImage
@@ -59,6 +66,7 @@ const UIDesign = () => {
               src={pcTerminal3}
               width={285}
               height={400}
+              centerTop
               onClick={() => setViewerShow1(true)}
             />
             <MyImage
@@ -66,6 +74,7 @@ const UIDesign = () => {
               src={pcTerminal4}
               width={285}
               height={400}
+              centerTop
               onClick={() => setViewerShow1(true)}
             />
           </div>
@@ -78,6 +87,10 @@ const UIDesign = () => {
               { src: pcTerminal2, alt: "" },
               { src: pcTerminal3, alt: "" },
               { src: pcTerminal4, alt: "" },
+              { src: pcTerminal5, alt: "" },
+              { src: pcTerminal6, alt: "" },
+              { src: pcTerminal7, alt: "" },
+              { src: pcTerminal8, alt: "" },
             ]}
           />
         </div>
@@ -91,6 +104,7 @@ const UIDesign = () => {
               src={mobileTerminal1}
               width={175}
               height={280}
+              centerTop
               onClick={() => setViewerShow2(true)}
             />
             <MyImage
@@ -98,6 +112,7 @@ const UIDesign = () => {
               src={mobileTerminal2}
               width={175}
               height={280}
+              centerTop
               onClick={() => setViewerShow2(true)}
             />
             <MyImage
@@ -105,6 +120,7 @@ const UIDesign = () => {
               src={mobileTerminal3}
               width={175}
               height={280}
+              centerTop
               onClick={() => setViewerShow2(true)}
             />
             <MyImage
@@ -112,6 +128,7 @@ const UIDesign = () => {
               src={mobileTerminal4}
               width={175}
               height={280}
+              centerTop
               onClick={() => setViewerShow2(true)}
             />
             <MyImage
@@ -119,6 +136,7 @@ const UIDesign = () => {
               src={mobileTerminal5}
               width={175}
               height={280}
+              centerTop
               onClick={() => setViewerShow2(true)}
             />
             <MyImage
@@ -126,6 +144,7 @@ const UIDesign = () => {
               src={mobileTerminal6}
               width={175}
               height={280}
+              centerTop
               onClick={() => setViewerShow2(true)}
             />
           </div>
@@ -140,6 +159,7 @@ const UIDesign = () => {
               { src: mobileTerminal4, alt: "" },
               { src: mobileTerminal5, alt: "" },
               { src: mobileTerminal6, alt: "" },
+              { src: mobileTerminal7, alt: "" },
             ]}
           />
         </div>
