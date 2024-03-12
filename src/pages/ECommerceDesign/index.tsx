@@ -49,9 +49,13 @@ import detail8 from "images/eCommerceDesign/detail8.jpg";
 import styles from "./index.module.scss";
 
 const ECommerceDesign = () => {
+  const [activeIndex1, setActiveIndex1] = useState(0);
   const [viewerShow1, setViewerShow1] = useState(false);
+  const [activeIndex2, setActiveIndex2] = useState(0);
   const [viewerShow2, setViewerShow2] = useState(false);
+  const [activeIndex3, setActiveIndex3] = useState(0);
   const [viewerShow3, setViewerShow3] = useState(false);
+  const [activeIndex4, setActiveIndex4] = useState(0);
   const [viewerShow4, setViewerShow4] = useState(false);
 
   return (
@@ -74,7 +78,10 @@ const ECommerceDesign = () => {
                 width={380}
                 height={500}
                 centerTop
-                onClick={() => setViewerShow1(true)}
+                onClick={() => {
+                  setActiveIndex1(0);
+                  setViewerShow1(true);
+                }}
               />
               <BorderBox1
                 url={shopHomepage2}
@@ -82,7 +89,10 @@ const ECommerceDesign = () => {
                 width={380}
                 height={500}
                 centerTop
-                onClick={() => setViewerShow1(true)}
+                onClick={() => {
+                  setActiveIndex1(1);
+                  setViewerShow1(true);
+                }}
               />
               <BorderBox1
                 url={shopHomepage3}
@@ -90,7 +100,10 @@ const ECommerceDesign = () => {
                 width={380}
                 height={500}
                 centerTop
-                onClick={() => setViewerShow1(true)}
+                onClick={() => {
+                  setActiveIndex1(2);
+                  setViewerShow1(true);
+                }}
               />
             </div>
             <div className={styles.row}>
@@ -100,7 +113,10 @@ const ECommerceDesign = () => {
                 width={380}
                 height={500}
                 centerTop
-                onClick={() => setViewerShow1(true)}
+                onClick={() => {
+                  setActiveIndex1(3);
+                  setViewerShow1(true);
+                }}
               />
               <BorderBox1
                 url={shopHomepage5}
@@ -108,7 +124,10 @@ const ECommerceDesign = () => {
                 width={380}
                 height={500}
                 centerTop
-                onClick={() => setViewerShow1(true)}
+                onClick={() => {
+                  setActiveIndex1(4);
+                  setViewerShow1(true);
+                }}
               />
               <BorderBox1
                 url={shopHomepage6}
@@ -116,12 +135,17 @@ const ECommerceDesign = () => {
                 width={380}
                 height={500}
                 centerTop
-                onClick={() => setViewerShow1(true)}
+                onClick={() => {
+                  setActiveIndex1(5);
+                  setViewerShow1(true);
+                }}
               />
             </div>
           </div>
           <Viewer
             visible={viewerShow1}
+            activeIndex={activeIndex1}
+            zoomSpeed={0.5}
             onClose={() => setViewerShow1(false)}
             onMaskClick={() => setViewerShow1(false)}
             images={[
@@ -147,14 +171,20 @@ const ECommerceDesign = () => {
                 borderType={2}
                 width={585}
                 height={200}
-                onClick={() => setViewerShow2(true)}
+                onClick={() => {
+                  setActiveIndex2(0);
+                  setViewerShow2(true);
+                }}
               />
               <BorderBox1
                 url={banner2}
                 borderType={2}
                 width={585}
                 height={200}
-                onClick={() => setViewerShow2(true)}
+                onClick={() => {
+                  setActiveIndex2(1);
+                  setViewerShow2(true);
+                }}
               />
             </div>
             <div className={styles.row}>
@@ -163,14 +193,20 @@ const ECommerceDesign = () => {
                 borderType={2}
                 width={585}
                 height={200}
-                onClick={() => setViewerShow2(true)}
+                onClick={() => {
+                  setActiveIndex2(2);
+                  setViewerShow2(true);
+                }}
               />
               <BorderBox1
                 url={banner4}
                 borderType={2}
                 width={585}
                 height={200}
-                onClick={() => setViewerShow2(true)}
+                onClick={() => {
+                  setActiveIndex2(3);
+                  setViewerShow2(true);
+                }}
               />
             </div>
             <div className={styles.row}>
@@ -179,19 +215,26 @@ const ECommerceDesign = () => {
                 borderType={2}
                 width={585}
                 height={200}
-                onClick={() => setViewerShow2(true)}
+                onClick={() => {
+                  setActiveIndex2(4);
+                  setViewerShow2(true);
+                }}
               />
               <BorderBox1
                 url={banner6}
                 borderType={2}
                 width={585}
                 height={200}
-                onClick={() => setViewerShow2(true)}
+                onClick={() => {
+                  setActiveIndex2(5);
+                  setViewerShow2(true);
+                }}
               />
             </div>
           </div>
           <Viewer
             visible={viewerShow2}
+            activeIndex={activeIndex2}
             onClose={() => setViewerShow2(false)}
             onMaskClick={() => setViewerShow2(false)}
             images={[
@@ -221,21 +264,30 @@ const ECommerceDesign = () => {
                 borderType={3}
                 width={380}
                 height={380}
-                onClick={() => setViewerShow3(true)}
+                onClick={() => {
+                  setActiveIndex3(0);
+                  setViewerShow3(true);
+                }}
               />
               <BorderBox1
                 url={masterImage2}
                 borderType={3}
                 width={380}
                 height={380}
-                onClick={() => setViewerShow3(true)}
+                onClick={() => {
+                  setActiveIndex3(1);
+                  setViewerShow3(true);
+                }}
               />
               <BorderBox1
                 url={masterImage3}
                 borderType={3}
                 width={380}
                 height={380}
-                onClick={() => setViewerShow3(true)}
+                onClick={() => {
+                  setActiveIndex3(2);
+                  setViewerShow3(true);
+                }}
               />
             </div>
             <div className={styles.row}>
@@ -244,26 +296,36 @@ const ECommerceDesign = () => {
                 borderType={3}
                 width={380}
                 height={380}
-                onClick={() => setViewerShow3(true)}
+                onClick={() => {
+                  setActiveIndex3(3);
+                  setViewerShow3(true);
+                }}
               />
               <BorderBox1
                 url={masterImage5}
                 borderType={3}
                 width={380}
                 height={380}
-                onClick={() => setViewerShow3(true)}
+                onClick={() => {
+                  setActiveIndex3(4);
+                  setViewerShow3(true);
+                }}
               />
               <BorderBox1
                 url={masterImage6}
                 borderType={3}
                 width={380}
                 height={380}
-                onClick={() => setViewerShow3(true)}
+                onClick={() => {
+                  setActiveIndex3(5);
+                  setViewerShow3(true);
+                }}
               />
             </div>
           </div>
           <Viewer
             visible={viewerShow3}
+            activeIndex={activeIndex3}
             onClose={() => setViewerShow3(false)}
             onMaskClick={() => setViewerShow3(false)}
             images={[
@@ -292,7 +354,10 @@ const ECommerceDesign = () => {
                 width={380}
                 height={500}
                 centerTop
-                onClick={() => setViewerShow4(true)}
+                onClick={() => {
+                  setActiveIndex4(0);
+                  setViewerShow4(true);
+                }}
               />
               <BorderBox1
                 url={detail2}
@@ -300,7 +365,10 @@ const ECommerceDesign = () => {
                 width={380}
                 height={500}
                 centerTop
-                onClick={() => setViewerShow4(true)}
+                onClick={() => {
+                  setActiveIndex4(1);
+                  setViewerShow4(true);
+                }}
               />
               <BorderBox1
                 url={detail3}
@@ -308,7 +376,10 @@ const ECommerceDesign = () => {
                 width={380}
                 height={500}
                 centerTop
-                onClick={() => setViewerShow4(true)}
+                onClick={() => {
+                  setActiveIndex4(2);
+                  setViewerShow4(true);
+                }}
               />
             </div>
             <div className={styles.row}>
@@ -318,7 +389,10 @@ const ECommerceDesign = () => {
                 width={380}
                 height={500}
                 centerTop
-                onClick={() => setViewerShow4(true)}
+                onClick={() => {
+                  setActiveIndex4(3);
+                  setViewerShow4(true);
+                }}
               />
               <BorderBox1
                 url={detail5}
@@ -326,7 +400,10 @@ const ECommerceDesign = () => {
                 width={380}
                 height={500}
                 centerTop
-                onClick={() => setViewerShow4(true)}
+                onClick={() => {
+                  setActiveIndex4(4);
+                  setViewerShow4(true);
+                }}
               />
               <BorderBox1
                 url={detail6}
@@ -334,12 +411,17 @@ const ECommerceDesign = () => {
                 width={380}
                 height={500}
                 centerTop
-                onClick={() => setViewerShow4(true)}
+                onClick={() => {
+                  setActiveIndex4(5);
+                  setViewerShow4(true);
+                }}
               />
             </div>
           </div>
           <Viewer
             visible={viewerShow4}
+            activeIndex={activeIndex4}
+            zoomSpeed={0.5}
             onClose={() => setViewerShow4(false)}
             onMaskClick={() => setViewerShow4(false)}
             images={[
