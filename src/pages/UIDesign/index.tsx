@@ -28,8 +28,11 @@ import icons2 from "images/uiDesign/icons2.png";
 import styles from "./index.module.scss";
 
 const UIDesign = () => {
+  const [activeIndex1, setActiveIndex1] = useState(0);
   const [viewerShow1, setViewerShow1] = useState(false);
+  const [activeIndex2, setActiveIndex2] = useState(0);
   const [viewerShow2, setViewerShow2] = useState(false);
+  const [activeIndex3, setActiveIndex3] = useState(0);
   const [viewerShow3, setViewerShow3] = useState(false);
 
   return (
@@ -51,7 +54,10 @@ const UIDesign = () => {
               width={285}
               height={400}
               centerTop
-              onClick={() => setViewerShow1(true)}
+              onClick={() => {
+                setActiveIndex1(0);
+                setViewerShow1(true);
+              }}
             />
             <MyImage
               className={styles.imgBox}
@@ -59,7 +65,10 @@ const UIDesign = () => {
               width={285}
               height={400}
               centerTop
-              onClick={() => setViewerShow1(true)}
+              onClick={() => {
+                setActiveIndex1(1);
+                setViewerShow1(true);
+              }}
             />
             <MyImage
               className={styles.imgBox}
@@ -67,7 +76,10 @@ const UIDesign = () => {
               width={285}
               height={400}
               centerTop
-              onClick={() => setViewerShow1(true)}
+              onClick={() => {
+                setActiveIndex1(2);
+                setViewerShow1(true);
+              }}
             />
             <MyImage
               className={styles.imgBox}
@@ -75,11 +87,16 @@ const UIDesign = () => {
               width={285}
               height={400}
               centerTop
-              onClick={() => setViewerShow1(true)}
+              onClick={() => {
+                setActiveIndex1(3);
+                setViewerShow1(true);
+              }}
             />
           </div>
           <Viewer
             visible={viewerShow1}
+            activeIndex={activeIndex1}
+            zoomSpeed={0.1}
             onClose={() => setViewerShow1(false)}
             onMaskClick={() => setViewerShow1(false)}
             images={[
@@ -105,7 +122,10 @@ const UIDesign = () => {
               width={175}
               height={280}
               centerTop
-              onClick={() => setViewerShow2(true)}
+              onClick={() => {
+                setActiveIndex2(0);
+                setViewerShow2(true);
+              }}
             />
             <MyImage
               className={styles.imgBox}
@@ -113,7 +133,10 @@ const UIDesign = () => {
               width={175}
               height={280}
               centerTop
-              onClick={() => setViewerShow2(true)}
+              onClick={() => {
+                setActiveIndex2(1);
+                setViewerShow2(true);
+              }}
             />
             <MyImage
               className={styles.imgBox}
@@ -121,7 +144,10 @@ const UIDesign = () => {
               width={175}
               height={280}
               centerTop
-              onClick={() => setViewerShow2(true)}
+              onClick={() => {
+                setActiveIndex2(2);
+                setViewerShow2(true);
+              }}
             />
             <MyImage
               className={styles.imgBox}
@@ -129,7 +155,10 @@ const UIDesign = () => {
               width={175}
               height={280}
               centerTop
-              onClick={() => setViewerShow2(true)}
+              onClick={() => {
+                setActiveIndex2(3);
+                setViewerShow2(true);
+              }}
             />
             <MyImage
               className={styles.imgBox}
@@ -137,7 +166,10 @@ const UIDesign = () => {
               width={175}
               height={280}
               centerTop
-              onClick={() => setViewerShow2(true)}
+              onClick={() => {
+                setActiveIndex2(4);
+                setViewerShow2(true);
+              }}
             />
             <MyImage
               className={styles.imgBox}
@@ -145,11 +177,16 @@ const UIDesign = () => {
               width={175}
               height={280}
               centerTop
-              onClick={() => setViewerShow2(true)}
+              onClick={() => {
+                setActiveIndex2(5);
+                setViewerShow2(true);
+              }}
             />
           </div>
           <Viewer
             visible={viewerShow2}
+            activeIndex={activeIndex2}
+            zoomSpeed={0.5}
             onClose={() => setViewerShow2(false)}
             onMaskClick={() => setViewerShow2(false)}
             images={[
@@ -173,18 +210,25 @@ const UIDesign = () => {
               src={icons1}
               width={585}
               height={350}
-              onClick={() => setViewerShow3(true)}
+              onClick={() => {
+                setActiveIndex3(0);
+                setViewerShow3(true);
+              }}
             />
             <MyImage
               className={styles.imgBox}
               src={icons2}
               width={585}
               height={350}
-              onClick={() => setViewerShow3(true)}
+              onClick={() => {
+                setActiveIndex3(1);
+                setViewerShow3(true);
+              }}
             />
           </div>
           <Viewer
             visible={viewerShow3}
+            activeIndex={activeIndex3}
             onClose={() => setViewerShow3(false)}
             onMaskClick={() => setViewerShow3(false)}
             images={[
