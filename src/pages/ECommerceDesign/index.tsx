@@ -3,10 +3,12 @@
  */
 import React, { useState } from "react";
 import Viewer from "react-viewer";
+import useImageSrc from "hooks/useImageSrc";
 import Banner from "components/Banner";
 import ModuleTitle from "components/ModuleTitle";
 import BorderBox1 from "components/BorderBox1";
 import Footer from "components/Footer";
+import bg from "images/bg.png";
 import bannerBg from "images/eCommerceDesign/bannerBg.png";
 import shopHomepage1 from "images/eCommerceDesign/shopHomepage1.jpg";
 import shopHomepage2 from "images/eCommerceDesign/shopHomepage2.jpg";
@@ -49,6 +51,7 @@ import detail8 from "images/eCommerceDesign/detail8.jpg";
 import styles from "./index.module.scss";
 
 const ECommerceDesign = () => {
+  const bgSrc = useImageSrc(bg);
   const [activeIndex1, setActiveIndex1] = useState(0);
   const [viewerShow1, setViewerShow1] = useState(false);
   const [activeIndex2, setActiveIndex2] = useState(0);
@@ -59,7 +62,18 @@ const ECommerceDesign = () => {
   const [viewerShow4, setViewerShow4] = useState(false);
 
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      style={
+        bgSrc
+          ? {
+              backgroundImage: `url(${bg})`,
+              backgroundRepeat: "repeat-y",
+              backgroundSize: "100% 100px",
+            }
+          : {}
+      }
+    >
       <Banner
         bgUrl={bannerBg}
         backgroundColor="#e6ddd6"
