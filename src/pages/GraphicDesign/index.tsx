@@ -4,12 +4,13 @@
 import React, { useState } from "react";
 import Viewer from "react-viewer";
 import useImageSrc from "hooks/useImageSrc";
+import { IMG_PREFIX } from "constants/common";
 import Banner from "components/Banner";
 import ModuleTitle from "components/ModuleTitle";
 import BorderBox2 from "components/BorderBox2";
 import Footer from "components/Footer";
 import bg from "images/bg.png";
-import bannerBg from "images/graphicDesign/bannerBg.png";
+// import bannerBg from "images/graphicDesign/bannerBg.png";
 import poster1 from "images/graphicDesign/poster1.jpeg";
 import poster2 from "images/graphicDesign/poster2.jpg";
 import poster3 from "images/graphicDesign/poster3.jpeg";
@@ -40,11 +41,11 @@ import albumOfPainting5 from "images/graphicDesign/albumOfPainting5.jpg";
 import albumOfPainting6 from "images/graphicDesign/albumOfPainting6.jpg";
 import albumOfPainting7 from "images/graphicDesign/albumOfPainting7.jpg";
 import albumOfPainting8 from "images/graphicDesign/albumOfPainting8.jpg";
-import rollUpBanner1 from "images/graphicDesign/rollUpBanner1.jpeg";
-import rollUpBanner2 from "images/graphicDesign/rollUpBanner2.jpg";
-import rollUpBanner3 from "images/graphicDesign/rollUpBanner3.jpg";
-import rollUpBanner4 from "images/graphicDesign/rollUpBanner4.jpeg";
-import rollUpBanner5 from "images/graphicDesign/rollUpBanner5.jpeg";
+// import rollUpBanner1 from "images/graphicDesign/rollUpBanner1.jpeg";
+// import rollUpBanner2 from "images/graphicDesign/rollUpBanner2.jpg";
+// import rollUpBanner3 from "images/graphicDesign/rollUpBanner3.jpg";
+// import rollUpBanner4 from "images/graphicDesign/rollUpBanner4.jpeg";
+// import rollUpBanner5 from "images/graphicDesign/rollUpBanner5.jpeg";
 import cultureWall1 from "images/graphicDesign/cultureWall1.jpg";
 import cultureWall2 from "images/graphicDesign/cultureWall2.jpg";
 import cultureWall3 from "images/graphicDesign/cultureWall3.jpg";
@@ -52,6 +53,15 @@ import cultureWall4 from "images/graphicDesign/cultureWall4.jpeg";
 import cultureWall5 from "images/graphicDesign/cultureWall5.jpg";
 import cultureWall6 from "images/graphicDesign/cultureWall6.jpg";
 import styles from "./index.module.scss";
+
+const bannerBg = `${IMG_PREFIX}graphicDesign/bannerBg.png`;
+const rollUpBannerList = [
+  `${IMG_PREFIX}graphicDesign/rollUpBanner1.jpeg`,
+  `${IMG_PREFIX}graphicDesign/rollUpBanner2.jpg`,
+  `${IMG_PREFIX}graphicDesign/rollUpBanner3.jpg`,
+  `${IMG_PREFIX}graphicDesign/rollUpBanner4.jpeg`,
+  `${IMG_PREFIX}graphicDesign/rollUpBanner5.jpeg`,
+];
 
 const GraphicDesign = () => {
   const bgSrc = useImageSrc(bg);
@@ -431,7 +441,7 @@ const GraphicDesign = () => {
           <div className={styles.box}>
             <div className={styles.row}>
               <BorderBox2
-                url={rollUpBanner1}
+                url={rollUpBannerList[0]}
                 borderType={5}
                 width={280}
                 height={500}
@@ -442,7 +452,7 @@ const GraphicDesign = () => {
                 }}
               />
               <BorderBox2
-                url={rollUpBanner2}
+                url={rollUpBannerList[1]}
                 borderType={5}
                 width={280}
                 height={500}
@@ -453,7 +463,7 @@ const GraphicDesign = () => {
                 }}
               />
               <BorderBox2
-                url={rollUpBanner4}
+                url={rollUpBannerList[2]}
                 borderType={5}
                 width={280}
                 height={500}
@@ -464,7 +474,7 @@ const GraphicDesign = () => {
                 }}
               />
               <BorderBox2
-                url={rollUpBanner5}
+                url={rollUpBannerList[3]}
                 borderType={5}
                 width={280}
                 height={500}
@@ -483,11 +493,11 @@ const GraphicDesign = () => {
             onClose={() => setViewerShow3(false)}
             onMaskClick={() => setViewerShow3(false)}
             images={[
-              { src: rollUpBanner1, alt: "" },
-              { src: rollUpBanner2, alt: "" },
-              { src: rollUpBanner3, alt: "" },
-              { src: rollUpBanner4, alt: "" },
-              { src: rollUpBanner5, alt: "" },
+              { src: rollUpBannerList[0], alt: "" },
+              { src: rollUpBannerList[1], alt: "" },
+              { src: rollUpBannerList[2], alt: "" },
+              { src: rollUpBannerList[3], alt: "" },
+              { src: rollUpBannerList[4], alt: "" },
             ]}
           />
         </div>
