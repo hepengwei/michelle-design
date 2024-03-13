@@ -4,12 +4,13 @@
 import React, { useState } from "react";
 import Viewer from "react-viewer";
 import useImageSrc from "hooks/useImageSrc";
+import { IMG_PREFIX } from "constants/common";
 import Banner from "components/Banner";
 import ModuleTitle from "components/ModuleTitle";
 import BorderBox1 from "components/BorderBox1";
 import Footer from "components/Footer";
 import bg from "images/bg.png";
-import bannerBg from "images/eCommerceDesign/bannerBg.png";
+// import bannerBg from "images/eCommerceDesign/bannerBg.png";
 import shopHomepage1 from "images/eCommerceDesign/shopHomepage1.jpg";
 import shopHomepage2 from "images/eCommerceDesign/shopHomepage2.jpg";
 import shopHomepage3 from "images/eCommerceDesign/shopHomepage3.jpeg";
@@ -40,15 +41,27 @@ import masterImage7 from "images/eCommerceDesign/masterImage7.jpg";
 import masterImage8 from "images/eCommerceDesign/masterImage8.jpg";
 import masterImage9 from "images/eCommerceDesign/masterImage9.jpg";
 import masterImage10 from "images/eCommerceDesign/masterImage10.jpg";
-import detail1 from "images/eCommerceDesign/detail1.jpg";
-import detail2 from "images/eCommerceDesign/detail2.jpg";
-import detail3 from "images/eCommerceDesign/detail3.jpg";
-import detail4 from "images/eCommerceDesign/detail4.jpg";
-import detail5 from "images/eCommerceDesign/detail5.jpg";
-import detail6 from "images/eCommerceDesign/detail6.jpg";
-import detail7 from "images/eCommerceDesign/detail7.jpg";
-import detail8 from "images/eCommerceDesign/detail8.jpg";
+// import detail1 from "images/eCommerceDesign/detail1.jpg";
+// import detail2 from "images/eCommerceDesign/detail2.jpg";
+// import detail3 from "images/eCommerceDesign/detail3.jpg";
+// import detail4 from "images/eCommerceDesign/detail4.jpg";
+// import detail5 from "images/eCommerceDesign/detail5.jpg";
+// import detail6 from "images/eCommerceDesign/detail6.jpg";
+// import detail7 from "images/eCommerceDesign/detail7.jpg";
+// import detail8 from "images/eCommerceDesign/detail8.jpg";
 import styles from "./index.module.scss";
+
+const bannerBg = `${IMG_PREFIX}eCommerceDesign/bannerBg.png`;
+const detailList = [
+  `${IMG_PREFIX}eCommerceDesign/detail1.jpg`,
+  `${IMG_PREFIX}eCommerceDesign/detail2.jpg`,
+  `${IMG_PREFIX}eCommerceDesign/detail3.jpg`,
+  `${IMG_PREFIX}eCommerceDesign/detail4.jpg`,
+  `${IMG_PREFIX}eCommerceDesign/detail5.jpg`,
+  `${IMG_PREFIX}eCommerceDesign/detail6.jpg`,
+  `${IMG_PREFIX}eCommerceDesign/detail7.jpg`,
+  `${IMG_PREFIX}eCommerceDesign/detail8.jpg`,
+];
 
 const ECommerceDesign = () => {
   const bgSrc = useImageSrc(bg);
@@ -363,7 +376,7 @@ const ECommerceDesign = () => {
           <div className={styles.box}>
             <div className={styles.row}>
               <BorderBox1
-                url={detail1}
+                url={detailList[0]}
                 borderType={1}
                 width={380}
                 height={500}
@@ -374,7 +387,7 @@ const ECommerceDesign = () => {
                 }}
               />
               <BorderBox1
-                url={detail2}
+                url={detailList[1]}
                 borderType={1}
                 width={380}
                 height={500}
@@ -385,7 +398,7 @@ const ECommerceDesign = () => {
                 }}
               />
               <BorderBox1
-                url={detail3}
+                url={detailList[2]}
                 borderType={1}
                 width={380}
                 height={500}
@@ -398,7 +411,7 @@ const ECommerceDesign = () => {
             </div>
             <div className={styles.row}>
               <BorderBox1
-                url={detail4}
+                url={detailList[3]}
                 borderType={1}
                 width={380}
                 height={500}
@@ -409,7 +422,7 @@ const ECommerceDesign = () => {
                 }}
               />
               <BorderBox1
-                url={detail5}
+                url={detailList[4]}
                 borderType={1}
                 width={380}
                 height={500}
@@ -420,7 +433,7 @@ const ECommerceDesign = () => {
                 }}
               />
               <BorderBox1
-                url={detail6}
+                url={detailList[5]}
                 borderType={1}
                 width={380}
                 height={500}
@@ -439,14 +452,14 @@ const ECommerceDesign = () => {
             onClose={() => setViewerShow4(false)}
             onMaskClick={() => setViewerShow4(false)}
             images={[
-              { src: detail1, alt: "" },
-              { src: detail2, alt: "" },
-              { src: detail3, alt: "" },
-              { src: detail4, alt: "" },
-              { src: detail5, alt: "" },
-              { src: detail6, alt: "" },
-              { src: detail7, alt: "" },
-              { src: detail8, alt: "" },
+              { src: detailList[0], alt: "" },
+              { src: detailList[1], alt: "" },
+              { src: detailList[2], alt: "" },
+              { src: detailList[3], alt: "" },
+              { src: detailList[4], alt: "" },
+              { src: detailList[5], alt: "" },
+              { src: detailList[6], alt: "" },
+              { src: detailList[7], alt: "" },
             ]}
           />
         </div>

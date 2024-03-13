@@ -3,11 +3,12 @@
  */
 import React, { useState } from "react";
 import Viewer from "react-viewer";
+import { IMG_PREFIX } from "constants/common";
 import Banner from "components/Banner";
 import ModuleTitle from "components/ModuleTitle";
 import MyImage from "components/MyImage";
 import Footer from "components/Footer";
-import bannerBg from "images/uiDesign/bannerBg.png";
+// import bannerBg from "images/uiDesign/bannerBg.png";
 import pcTerminal1 from "images/uiDesign/pcTerminal1.jpg";
 import pcTerminal2 from "images/uiDesign/pcTerminal2.png";
 import pcTerminal3 from "images/uiDesign/pcTerminal3.png";
@@ -23,9 +24,15 @@ import mobileTerminal4 from "images/uiDesign/mobileTerminal4.jpg";
 import mobileTerminal5 from "images/uiDesign/mobileTerminal5.jpg";
 import mobileTerminal6 from "images/uiDesign/mobileTerminal6.jpg";
 import mobileTerminal7 from "images/uiDesign/mobileTerminal7.jpg";
-import icons1 from "images/uiDesign/icons1.png";
-import icons2 from "images/uiDesign/icons2.png";
+// import icons1 from "images/uiDesign/icons1.png";
+// import icons2 from "images/uiDesign/icons2.png";
 import styles from "./index.module.scss";
+
+const bannerBg = `${IMG_PREFIX}uiDesign/bannerBg.png`;
+const iconsList = [
+  `${IMG_PREFIX}uiDesign/icons1.png`,
+  `${IMG_PREFIX}uiDesign/icons2.png`,
+];
 
 const UIDesign = () => {
   const [activeIndex1, setActiveIndex1] = useState(0);
@@ -207,7 +214,7 @@ const UIDesign = () => {
           <div className={styles.box}>
             <MyImage
               className={styles.imgBox}
-              src={icons1}
+              src={iconsList[0]}
               width={585}
               height={350}
               onClick={() => {
@@ -217,7 +224,7 @@ const UIDesign = () => {
             />
             <MyImage
               className={styles.imgBox}
-              src={icons2}
+              src={iconsList[1]}
               width={585}
               height={350}
               onClick={() => {
@@ -232,8 +239,8 @@ const UIDesign = () => {
             onClose={() => setViewerShow3(false)}
             onMaskClick={() => setViewerShow3(false)}
             images={[
-              { src: icons1, alt: "" },
-              { src: icons2, alt: "" },
+              { src: iconsList[0], alt: "" },
+              { src: iconsList[1], alt: "" },
             ]}
           />
         </div>
