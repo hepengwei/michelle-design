@@ -9,30 +9,59 @@ import ModuleTitle from "components/ModuleTitle";
 import MyImage from "components/MyImage";
 import Footer from "components/Footer";
 // import bannerBg from "images/uiDesign/bannerBg.png";
-import pcTerminal1 from "images/uiDesign/pcTerminal1.jpg";
-import pcTerminal2 from "images/uiDesign/pcTerminal2.png";
-import pcTerminal3 from "images/uiDesign/pcTerminal3.png";
-import pcTerminal4 from "images/uiDesign/pcTerminal4.jpg";
-import pcTerminal5 from "images/uiDesign/pcTerminal5.png";
-import pcTerminal6 from "images/uiDesign/pcTerminal6.jpg";
-import pcTerminal7 from "images/uiDesign/pcTerminal7.jpg";
-import pcTerminal8 from "images/uiDesign/pcTerminal8.png";
-import mobileTerminal1 from "images/uiDesign/mobileTerminal1.jpg";
-import mobileTerminal2 from "images/uiDesign/mobileTerminal2.jpg";
-import mobileTerminal3 from "images/uiDesign/mobileTerminal3.jpg";
-import mobileTerminal4 from "images/uiDesign/mobileTerminal4.jpg";
-import mobileTerminal5 from "images/uiDesign/mobileTerminal5.jpg";
-import mobileTerminal6 from "images/uiDesign/mobileTerminal6.jpg";
-import mobileTerminal7 from "images/uiDesign/mobileTerminal7.jpg";
+// import pcTerminal1 from "images/uiDesign/pcTerminal1.jpg";
+// import pcTerminal2 from "images/uiDesign/pcTerminal2.png";
+// import pcTerminal3 from "images/uiDesign/pcTerminal3.png";
+// import pcTerminal4 from "images/uiDesign/pcTerminal4.jpg";
+// import pcTerminal5 from "images/uiDesign/pcTerminal5.png";
+// import pcTerminal6 from "images/uiDesign/pcTerminal6.jpg";
+// import pcTerminal7 from "images/uiDesign/pcTerminal7.jpg";
+// import pcTerminal8 from "images/uiDesign/pcTerminal8.png";
+// import mobileTerminal1 from "images/uiDesign/mobileTerminal1.jpg";
+// import mobileTerminal2 from "images/uiDesign/mobileTerminal2.jpg";
+// import mobileTerminal3 from "images/uiDesign/mobileTerminal3.jpg";
+// import mobileTerminal4 from "images/uiDesign/mobileTerminal4.jpg";
+// import mobileTerminal5 from "images/uiDesign/mobileTerminal5.jpg";
+// import mobileTerminal6 from "images/uiDesign/mobileTerminal6.jpg";
+// import mobileTerminal7 from "images/uiDesign/mobileTerminal7.jpg";
 // import icons1 from "images/uiDesign/icons1.png";
 // import icons2 from "images/uiDesign/icons2.png";
 import styles from "./index.module.scss";
 
-const bannerBg = `${IMG_PREFIX}uiDesign/bannerBg.png`;
-const iconsList = [
-  `${IMG_PREFIX}uiDesign/icons1.png`,
-  `${IMG_PREFIX}uiDesign/icons2.png`,
+const prefix = `${IMG_PREFIX}uiDesign/`;
+const bannerBg = `${prefix}bannerBg.png`;
+const pcTerminalList = [
+  `${prefix}pcTerminal1.jpg`,
+  `${prefix}pcTerminal2.png`,
+  `${prefix}pcTerminal3.png`,
+  `${prefix}pcTerminal4.jpg`,
+  `${prefix}pcTerminal5.png`,
+  `${prefix}pcTerminal6.jpg`,
+  `${prefix}pcTerminal7.jpg`,
+  `${prefix}pcTerminal8.png`,
 ];
+const pcTerminalImages = pcTerminalList.map((url: string) => ({
+  src: url,
+  alt: "",
+}));
+const mobileTerminalList = [
+  `${prefix}mobileTerminal1.jpg`,
+  `${prefix}mobileTerminal2.jpg`,
+  `${prefix}mobileTerminal3.jpg`,
+  `${prefix}mobileTerminal4.jpg`,
+  `${prefix}mobileTerminal5.jpg`,
+  `${prefix}mobileTerminal6.jpg`,
+  `${prefix}mobileTerminal7.jpg`,
+];
+const mobileTerminalImages = mobileTerminalList.map((url: string) => ({
+  src: url,
+  alt: "",
+}));
+const iconsList = [`${prefix}icons1.png`, `${prefix}icons2.png`];
+const iconsImages = iconsList.map((url: string) => ({
+  src: url,
+  alt: "",
+}));
 
 const UIDesign = () => {
   const [activeIndex1, setActiveIndex1] = useState(0);
@@ -57,7 +86,7 @@ const UIDesign = () => {
           <div className={styles.box}>
             <MyImage
               className={styles.imgBox}
-              src={pcTerminal1}
+              src={pcTerminalList[0]}
               width={285}
               height={400}
               centerTop
@@ -68,7 +97,7 @@ const UIDesign = () => {
             />
             <MyImage
               className={styles.imgBox}
-              src={pcTerminal2}
+              src={pcTerminalList[1]}
               width={285}
               height={400}
               centerTop
@@ -79,7 +108,7 @@ const UIDesign = () => {
             />
             <MyImage
               className={styles.imgBox}
-              src={pcTerminal3}
+              src={pcTerminalList[2]}
               width={285}
               height={400}
               centerTop
@@ -90,7 +119,7 @@ const UIDesign = () => {
             />
             <MyImage
               className={styles.imgBox}
-              src={pcTerminal4}
+              src={pcTerminalList[3]}
               width={285}
               height={400}
               centerTop
@@ -106,16 +135,7 @@ const UIDesign = () => {
             zoomSpeed={0.1}
             onClose={() => setViewerShow1(false)}
             onMaskClick={() => setViewerShow1(false)}
-            images={[
-              { src: pcTerminal1, alt: "" },
-              { src: pcTerminal2, alt: "" },
-              { src: pcTerminal3, alt: "" },
-              { src: pcTerminal4, alt: "" },
-              { src: pcTerminal5, alt: "" },
-              { src: pcTerminal6, alt: "" },
-              { src: pcTerminal7, alt: "" },
-              { src: pcTerminal8, alt: "" },
-            ]}
+            images={pcTerminalImages}
           />
         </div>
       </div>
@@ -125,7 +145,7 @@ const UIDesign = () => {
           <div className={styles.box}>
             <MyImage
               className={styles.imgBox}
-              src={mobileTerminal1}
+              src={mobileTerminalList[0]}
               width={175}
               height={280}
               centerTop
@@ -136,7 +156,7 @@ const UIDesign = () => {
             />
             <MyImage
               className={styles.imgBox}
-              src={mobileTerminal2}
+              src={mobileTerminalList[1]}
               width={175}
               height={280}
               centerTop
@@ -147,7 +167,7 @@ const UIDesign = () => {
             />
             <MyImage
               className={styles.imgBox}
-              src={mobileTerminal3}
+              src={mobileTerminalList[2]}
               width={175}
               height={280}
               centerTop
@@ -158,7 +178,7 @@ const UIDesign = () => {
             />
             <MyImage
               className={styles.imgBox}
-              src={mobileTerminal4}
+              src={mobileTerminalList[3]}
               width={175}
               height={280}
               centerTop
@@ -169,7 +189,7 @@ const UIDesign = () => {
             />
             <MyImage
               className={styles.imgBox}
-              src={mobileTerminal5}
+              src={mobileTerminalList[4]}
               width={175}
               height={280}
               centerTop
@@ -180,7 +200,7 @@ const UIDesign = () => {
             />
             <MyImage
               className={styles.imgBox}
-              src={mobileTerminal6}
+              src={mobileTerminalList[5]}
               width={175}
               height={280}
               centerTop
@@ -196,15 +216,7 @@ const UIDesign = () => {
             zoomSpeed={0.5}
             onClose={() => setViewerShow2(false)}
             onMaskClick={() => setViewerShow2(false)}
-            images={[
-              { src: mobileTerminal1, alt: "" },
-              { src: mobileTerminal2, alt: "" },
-              { src: mobileTerminal3, alt: "" },
-              { src: mobileTerminal4, alt: "" },
-              { src: mobileTerminal5, alt: "" },
-              { src: mobileTerminal6, alt: "" },
-              { src: mobileTerminal7, alt: "" },
-            ]}
+            images={mobileTerminalImages}
           />
         </div>
       </div>
@@ -238,10 +250,7 @@ const UIDesign = () => {
             activeIndex={activeIndex3}
             onClose={() => setViewerShow3(false)}
             onMaskClick={() => setViewerShow3(false)}
-            images={[
-              { src: iconsList[0], alt: "" },
-              { src: iconsList[1], alt: "" },
-            ]}
+            images={iconsImages}
           />
         </div>
       </div>

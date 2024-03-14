@@ -9,38 +9,38 @@ import Banner from "components/Banner";
 import ModuleTitle from "components/ModuleTitle";
 import BorderBox1 from "components/BorderBox1";
 import Footer from "components/Footer";
-import bg from "images/bg.png";
+// import bg from "images/bg.png";
 // import bannerBg from "images/eCommerceDesign/bannerBg.png";
-import shopHomepage1 from "images/eCommerceDesign/shopHomepage1.jpg";
-import shopHomepage2 from "images/eCommerceDesign/shopHomepage2.jpg";
-import shopHomepage3 from "images/eCommerceDesign/shopHomepage3.jpeg";
-import shopHomepage4 from "images/eCommerceDesign/shopHomepage4.jpeg";
-import shopHomepage5 from "images/eCommerceDesign/shopHomepage5.jpg";
-import shopHomepage6 from "images/eCommerceDesign/shopHomepage6.jpg";
-import shopHomepage7 from "images/eCommerceDesign/shopHomepage7.jpg";
-import shopHomepage8 from "images/eCommerceDesign/shopHomepage8.jpeg";
-import banner1 from "images/eCommerceDesign/banner1.jpg";
-import banner2 from "images/eCommerceDesign/banner2.jpg";
-import banner3 from "images/eCommerceDesign/banner3.jpg";
-import banner4 from "images/eCommerceDesign/banner4.jpg";
-import banner5 from "images/eCommerceDesign/banner5.jpg";
-import banner6 from "images/eCommerceDesign/banner6.jpg";
-import banner7 from "images/eCommerceDesign/banner7.jpg";
-import banner8 from "images/eCommerceDesign/banner8.jpg";
-import banner9 from "images/eCommerceDesign/banner9.jpg";
-import banner10 from "images/eCommerceDesign/banner10.jpg";
-import banner11 from "images/eCommerceDesign/banner11.jpg";
-import banner12 from "images/eCommerceDesign/banner12.jpg";
-import masterImage1 from "images/eCommerceDesign/masterImage1.jpg";
-import masterImage2 from "images/eCommerceDesign/masterImage2.jpg";
-import masterImage3 from "images/eCommerceDesign/masterImage3.jpg";
-import masterImage4 from "images/eCommerceDesign/masterImage4.jpg";
-import masterImage5 from "images/eCommerceDesign/masterImage5.jpg";
-import masterImage6 from "images/eCommerceDesign/masterImage6.jpg";
-import masterImage7 from "images/eCommerceDesign/masterImage7.jpg";
-import masterImage8 from "images/eCommerceDesign/masterImage8.jpg";
-import masterImage9 from "images/eCommerceDesign/masterImage9.jpg";
-import masterImage10 from "images/eCommerceDesign/masterImage10.jpg";
+// import shopHomepage1 from "images/eCommerceDesign/shopHomepage1.jpg";
+// import shopHomepage2 from "images/eCommerceDesign/shopHomepage2.jpg";
+// import shopHomepage3 from "images/eCommerceDesign/shopHomepage3.jpeg";
+// import shopHomepage4 from "images/eCommerceDesign/shopHomepage4.jpeg";
+// import shopHomepage5 from "images/eCommerceDesign/shopHomepage5.jpg";
+// import shopHomepage6 from "images/eCommerceDesign/shopHomepage6.jpg";
+// import shopHomepage7 from "images/eCommerceDesign/shopHomepage7.jpg";
+// import shopHomepage8 from "images/eCommerceDesign/shopHomepage8.jpeg";
+// import banner1 from "images/eCommerceDesign/banner1.jpg";
+// import banner2 from "images/eCommerceDesign/banner2.jpg";
+// import banner3 from "images/eCommerceDesign/banner3.jpg";
+// import banner4 from "images/eCommerceDesign/banner4.jpg";
+// import banner5 from "images/eCommerceDesign/banner5.jpg";
+// import banner6 from "images/eCommerceDesign/banner6.jpg";
+// import banner7 from "images/eCommerceDesign/banner7.jpg";
+// import banner8 from "images/eCommerceDesign/banner8.jpg";
+// import banner9 from "images/eCommerceDesign/banner9.jpg";
+// import banner10 from "images/eCommerceDesign/banner10.jpg";
+// import banner11 from "images/eCommerceDesign/banner11.jpg";
+// import banner12 from "images/eCommerceDesign/banner12.jpg";
+// import masterImage1 from "images/eCommerceDesign/masterImage1.jpg";
+// import masterImage2 from "images/eCommerceDesign/masterImage2.jpg";
+// import masterImage3 from "images/eCommerceDesign/masterImage3.jpg";
+// import masterImage4 from "images/eCommerceDesign/masterImage4.jpg";
+// import masterImage5 from "images/eCommerceDesign/masterImage5.jpg";
+// import masterImage6 from "images/eCommerceDesign/masterImage6.jpg";
+// import masterImage7 from "images/eCommerceDesign/masterImage7.jpg";
+// import masterImage8 from "images/eCommerceDesign/masterImage8.jpg";
+// import masterImage9 from "images/eCommerceDesign/masterImage9.jpg";
+// import masterImage10 from "images/eCommerceDesign/masterImage10.jpg";
 // import detail1 from "images/eCommerceDesign/detail1.jpg";
 // import detail2 from "images/eCommerceDesign/detail2.jpg";
 // import detail3 from "images/eCommerceDesign/detail3.jpg";
@@ -51,17 +51,71 @@ import masterImage10 from "images/eCommerceDesign/masterImage10.jpg";
 // import detail8 from "images/eCommerceDesign/detail8.jpg";
 import styles from "./index.module.scss";
 
-const bannerBg = `${IMG_PREFIX}eCommerceDesign/bannerBg.png`;
-const detailList = [
-  `${IMG_PREFIX}eCommerceDesign/detail1.jpg`,
-  `${IMG_PREFIX}eCommerceDesign/detail2.jpg`,
-  `${IMG_PREFIX}eCommerceDesign/detail3.jpg`,
-  `${IMG_PREFIX}eCommerceDesign/detail4.jpg`,
-  `${IMG_PREFIX}eCommerceDesign/detail5.jpg`,
-  `${IMG_PREFIX}eCommerceDesign/detail6.jpg`,
-  `${IMG_PREFIX}eCommerceDesign/detail7.jpg`,
-  `${IMG_PREFIX}eCommerceDesign/detail8.jpg`,
+const bg = `${IMG_PREFIX}main/bg.png`;
+const prefix = `${IMG_PREFIX}eCommerceDesign/`;
+const bannerBg = `${prefix}bannerBg.png`;
+const shopHomepageList = [
+  `${prefix}shopHomepage1.jpg`,
+  `${prefix}shopHomepage2.jpg`,
+  `${prefix}shopHomepage3.jpeg`,
+  `${prefix}shopHomepage4.jpeg`,
+  `${prefix}shopHomepage5.jpg`,
+  `${prefix}shopHomepage6.jpg`,
+  `${prefix}shopHomepage7.jpg`,
+  `${prefix}shopHomepage8.jpeg`,
 ];
+const shopHomepageImages = shopHomepageList.map((url: string) => ({
+  src: url,
+  alt: "",
+}));
+const bannerList = [
+  `${prefix}banner1.jpg`,
+  `${prefix}banner2.jpg`,
+  `${prefix}banner3.jpg`,
+  `${prefix}banner4.jpg`,
+  `${prefix}banner5.jpg`,
+  `${prefix}banner6.jpg`,
+  `${prefix}banner7.jpg`,
+  `${prefix}banner8.jpg`,
+  `${prefix}banner9.jpg`,
+  `${prefix}banner10.jpg`,
+  `${prefix}banner11.jpg`,
+  `${prefix}banner12.jpg`,
+];
+const bannerImages = bannerList.map((url: string) => ({
+  src: url,
+  alt: "",
+}));
+const masterImageList = [
+  `${prefix}masterImage1.jpg`,
+  `${prefix}masterImage2.jpg`,
+  `${prefix}masterImage3.jpg`,
+  `${prefix}masterImage4.jpg`,
+  `${prefix}masterImage5.jpg`,
+  `${prefix}masterImage6.jpg`,
+  `${prefix}masterImage7.jpg`,
+  `${prefix}masterImage8.jpg`,
+  `${prefix}masterImage9.jpg`,
+  `${prefix}masterImage10.jpg`,
+];
+const masterImageImages = masterImageList.map((url: string) => ({
+  src: url,
+  alt: "",
+}));
+const detailList = [
+  `${prefix}detail1.jpg`,
+  `${prefix}detail2.jpg`,
+  `${prefix}detail3.jpg`,
+  `${prefix}detail4.jpg`,
+  `${prefix}detail5.jpg`,
+  `${prefix}detail6.jpg`,
+  `${prefix}detail7.jpg`,
+  `${prefix}detail8.jpg`,
+];
+const detailImages = detailList.map((url: string) => ({
+  src: url,
+  alt: "",
+}));
 
 const ECommerceDesign = () => {
   const bgSrc = useImageSrc(bg);
@@ -100,7 +154,7 @@ const ECommerceDesign = () => {
           <div className={styles.box}>
             <div className={styles.row}>
               <BorderBox1
-                url={shopHomepage1}
+                url={shopHomepageList[0]}
                 borderType={1}
                 width={380}
                 height={500}
@@ -111,7 +165,7 @@ const ECommerceDesign = () => {
                 }}
               />
               <BorderBox1
-                url={shopHomepage2}
+                url={shopHomepageList[1]}
                 borderType={1}
                 width={380}
                 height={500}
@@ -122,7 +176,7 @@ const ECommerceDesign = () => {
                 }}
               />
               <BorderBox1
-                url={shopHomepage3}
+                url={shopHomepageList[2]}
                 borderType={1}
                 width={380}
                 height={500}
@@ -135,7 +189,7 @@ const ECommerceDesign = () => {
             </div>
             <div className={styles.row}>
               <BorderBox1
-                url={shopHomepage4}
+                url={shopHomepageList[3]}
                 borderType={1}
                 width={380}
                 height={500}
@@ -146,7 +200,7 @@ const ECommerceDesign = () => {
                 }}
               />
               <BorderBox1
-                url={shopHomepage5}
+                url={shopHomepageList[4]}
                 borderType={1}
                 width={380}
                 height={500}
@@ -157,7 +211,7 @@ const ECommerceDesign = () => {
                 }}
               />
               <BorderBox1
-                url={shopHomepage6}
+                url={shopHomepageList[5]}
                 borderType={1}
                 width={380}
                 height={500}
@@ -175,16 +229,7 @@ const ECommerceDesign = () => {
             zoomSpeed={0.5}
             onClose={() => setViewerShow1(false)}
             onMaskClick={() => setViewerShow1(false)}
-            images={[
-              { src: shopHomepage1, alt: "" },
-              { src: shopHomepage2, alt: "" },
-              { src: shopHomepage3, alt: "" },
-              { src: shopHomepage4, alt: "" },
-              { src: shopHomepage5, alt: "" },
-              { src: shopHomepage6, alt: "" },
-              { src: shopHomepage7, alt: "" },
-              { src: shopHomepage8, alt: "" },
-            ]}
+            images={shopHomepageImages}
           />
         </div>
       </div>
@@ -194,7 +239,7 @@ const ECommerceDesign = () => {
           <div className={styles.box}>
             <div className={styles.row}>
               <BorderBox1
-                url={banner1}
+                url={bannerList[0]}
                 borderType={2}
                 width={585}
                 height={200}
@@ -204,7 +249,7 @@ const ECommerceDesign = () => {
                 }}
               />
               <BorderBox1
-                url={banner2}
+                url={bannerList[1]}
                 borderType={2}
                 width={585}
                 height={200}
@@ -216,7 +261,7 @@ const ECommerceDesign = () => {
             </div>
             <div className={styles.row}>
               <BorderBox1
-                url={banner3}
+                url={bannerList[2]}
                 borderType={2}
                 width={585}
                 height={200}
@@ -226,7 +271,7 @@ const ECommerceDesign = () => {
                 }}
               />
               <BorderBox1
-                url={banner4}
+                url={bannerList[3]}
                 borderType={2}
                 width={585}
                 height={200}
@@ -238,7 +283,7 @@ const ECommerceDesign = () => {
             </div>
             <div className={styles.row}>
               <BorderBox1
-                url={banner5}
+                url={bannerList[4]}
                 borderType={2}
                 width={585}
                 height={200}
@@ -248,7 +293,7 @@ const ECommerceDesign = () => {
                 }}
               />
               <BorderBox1
-                url={banner6}
+                url={bannerList[5]}
                 borderType={2}
                 width={585}
                 height={200}
@@ -264,20 +309,7 @@ const ECommerceDesign = () => {
             activeIndex={activeIndex2}
             onClose={() => setViewerShow2(false)}
             onMaskClick={() => setViewerShow2(false)}
-            images={[
-              { src: banner1, alt: "" },
-              { src: banner2, alt: "" },
-              { src: banner3, alt: "" },
-              { src: banner4, alt: "" },
-              { src: banner5, alt: "" },
-              { src: banner6, alt: "" },
-              { src: banner7, alt: "" },
-              { src: banner8, alt: "" },
-              { src: banner9, alt: "" },
-              { src: banner10, alt: "" },
-              { src: banner11, alt: "" },
-              { src: banner12, alt: "" },
-            ]}
+            images={bannerImages}
           />
         </div>
       </div>
@@ -287,7 +319,7 @@ const ECommerceDesign = () => {
           <div className={styles.box}>
             <div className={styles.row}>
               <BorderBox1
-                url={masterImage1}
+                url={masterImageList[0]}
                 borderType={3}
                 width={380}
                 height={380}
@@ -297,7 +329,7 @@ const ECommerceDesign = () => {
                 }}
               />
               <BorderBox1
-                url={masterImage2}
+                url={masterImageList[1]}
                 borderType={3}
                 width={380}
                 height={380}
@@ -307,7 +339,7 @@ const ECommerceDesign = () => {
                 }}
               />
               <BorderBox1
-                url={masterImage3}
+                url={masterImageList[2]}
                 borderType={3}
                 width={380}
                 height={380}
@@ -319,7 +351,7 @@ const ECommerceDesign = () => {
             </div>
             <div className={styles.row}>
               <BorderBox1
-                url={masterImage4}
+                url={masterImageList[3]}
                 borderType={3}
                 width={380}
                 height={380}
@@ -329,7 +361,7 @@ const ECommerceDesign = () => {
                 }}
               />
               <BorderBox1
-                url={masterImage5}
+                url={masterImageList[4]}
                 borderType={3}
                 width={380}
                 height={380}
@@ -339,7 +371,7 @@ const ECommerceDesign = () => {
                 }}
               />
               <BorderBox1
-                url={masterImage6}
+                url={masterImageList[5]}
                 borderType={3}
                 width={380}
                 height={380}
@@ -355,18 +387,7 @@ const ECommerceDesign = () => {
             activeIndex={activeIndex3}
             onClose={() => setViewerShow3(false)}
             onMaskClick={() => setViewerShow3(false)}
-            images={[
-              { src: masterImage1, alt: "" },
-              { src: masterImage2, alt: "" },
-              { src: masterImage3, alt: "" },
-              { src: masterImage4, alt: "" },
-              { src: masterImage5, alt: "" },
-              { src: masterImage6, alt: "" },
-              { src: masterImage7, alt: "" },
-              { src: masterImage8, alt: "" },
-              { src: masterImage9, alt: "" },
-              { src: masterImage10, alt: "" },
-            ]}
+            images={masterImageImages}
           />
         </div>
       </div>
@@ -451,16 +472,7 @@ const ECommerceDesign = () => {
             zoomSpeed={0.5}
             onClose={() => setViewerShow4(false)}
             onMaskClick={() => setViewerShow4(false)}
-            images={[
-              { src: detailList[0], alt: "" },
-              { src: detailList[1], alt: "" },
-              { src: detailList[2], alt: "" },
-              { src: detailList[3], alt: "" },
-              { src: detailList[4], alt: "" },
-              { src: detailList[5], alt: "" },
-              { src: detailList[6], alt: "" },
-              { src: detailList[7], alt: "" },
-            ]}
+            images={detailImages}
           />
         </div>
       </div>
