@@ -2,7 +2,6 @@ import React from "react";
 import { IMG_PREFIX } from "constants/common";
 import useImageSrc from "hooks/useImageSrc";
 import logo2 from "images/logo2.png";
-// import footerBg from "images/footerBg.png";
 import styles from "./index.module.scss";
 
 const footerBg = `${IMG_PREFIX}main/footerBg.png`;
