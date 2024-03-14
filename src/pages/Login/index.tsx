@@ -5,13 +5,14 @@ import React, { useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { Input, Button, message } from "antd";
 import { LockOutlined } from "@ant-design/icons";
-import { PASSWORD, DEFAULT_PAGE_URL } from "constants/common";
+import { IMG_PREFIX, PASSWORD, DEFAULT_PAGE_URL } from "constants/common";
 import useImageSrc from "hooks/useImageSrc";
-import loginBg from "images/loginBg.png";
+// import loginBg from "images/loginBg.png";
 import logo1 from "images/logo1.png";
 import logo2 from "images/logo2.png";
 import styles from "./index.module.scss";
 
+const loginBg = `${IMG_PREFIX}main/loginBg.png`;
 const maxAmbiguity = 6; // 背景图最大模糊度
 
 const Login = () => {
