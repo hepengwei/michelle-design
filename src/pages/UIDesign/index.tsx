@@ -8,24 +8,6 @@ import Banner from "components/Banner";
 import ModuleTitle from "components/ModuleTitle";
 import MyImage from "components/MyImage";
 import Footer from "components/Footer";
-// import bannerBg from "images/uiDesign/bannerBg.png";
-// import pcTerminal1 from "images/uiDesign/pcTerminal1.jpg";
-// import pcTerminal2 from "images/uiDesign/pcTerminal2.png";
-// import pcTerminal3 from "images/uiDesign/pcTerminal3.png";
-// import pcTerminal4 from "images/uiDesign/pcTerminal4.jpg";
-// import pcTerminal5 from "images/uiDesign/pcTerminal5.png";
-// import pcTerminal6 from "images/uiDesign/pcTerminal6.jpg";
-// import pcTerminal7 from "images/uiDesign/pcTerminal7.jpg";
-// import pcTerminal8 from "images/uiDesign/pcTerminal8.png";
-// import mobileTerminal1 from "images/uiDesign/mobileTerminal1.jpg";
-// import mobileTerminal2 from "images/uiDesign/mobileTerminal2.jpg";
-// import mobileTerminal3 from "images/uiDesign/mobileTerminal3.jpg";
-// import mobileTerminal4 from "images/uiDesign/mobileTerminal4.jpg";
-// import mobileTerminal5 from "images/uiDesign/mobileTerminal5.jpg";
-// import mobileTerminal6 from "images/uiDesign/mobileTerminal6.jpg";
-// import mobileTerminal7 from "images/uiDesign/mobileTerminal7.jpg";
-// import icons1 from "images/uiDesign/icons1.png";
-// import icons2 from "images/uiDesign/icons2.png";
 import styles from "./index.module.scss";
 
 const prefix = `${IMG_PREFIX}uiDesign/`;
@@ -132,7 +114,7 @@ const UIDesign = () => {
           <Viewer
             visible={viewerShow1}
             activeIndex={activeIndex1}
-            zoomSpeed={0.1}
+            zoomSpeed={0.2}
             onClose={() => setViewerShow1(false)}
             onMaskClick={() => setViewerShow1(false)}
             images={pcTerminalImages}

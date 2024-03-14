@@ -3,33 +3,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  // .banner2 {
-  //   @include module;
-  //   height: 300px;
-  //   min-height: 300px;
-  //   background-color: #e6ddd6;
-  //   margin-top: $headerHeight;
-  //   align-items: center;
-
-  //   .box {
-  //     display: flex;
-  //     flex-direction: column;
-  //     align-items: center;
-  //     .title {
-  //       color: #111111;
-  //       font-size: 40px;
-  //       line-height: 40px;
-  //       font-family: "SourceHanSansCN-Bold";
-  //       font-weight: 600;
-  //     }
-  //     .des {
-  //       color: #111111;
-  //       font-size: 16px;
-  //       line-height: 16px;
-  //       margin-top: 20px;
-  //     }
-  //   }
-  // }
 
   .shopHomepage {
     @include module2;
