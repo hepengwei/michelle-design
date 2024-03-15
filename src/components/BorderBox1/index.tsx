@@ -12,7 +12,8 @@ interface BorderBoxProps {
   borderType: number;
   width: number;
   height: number;
-  centerTop?: boolean;
+  centerTop?: boolean; // 图片整体位置左右居中，从上到下，默认为false，上下左右都居中
+  coverType?: "width" | "height"; // 图片按照满宽度或满高度进行自动铺满
   onClick?: () => void;
   className?: string;
 }
@@ -24,6 +25,7 @@ const BorderBox1 = (props: BorderBoxProps) => {
     width,
     height,
     centerTop = false,
+    coverType,
     className,
     onClick,
   } = props;
@@ -58,6 +60,7 @@ const BorderBox1 = (props: BorderBoxProps) => {
         width={width - padding * 2}
         height={height - padding * 2}
         centerTop={centerTop}
+        coverType={coverType}
       />
     </div>
   );

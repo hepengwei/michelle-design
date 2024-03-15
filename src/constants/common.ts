@@ -8,3 +8,5 @@ export const RECEIVE_SELF_KEY = "selfPageInfoList";
 export const RECEIVE_THAT_KEY = "aPageInfo";
 
 export const IMG_PREFIX = "https://hepengwei-oss.oss-cn-beijing.aliyuncs.com/";
+export const VIDEO_ADDRESS =
+  "https://www.xiaohongshu.com/user/profile/5c73508e000000001002bb12?xhsshare=CopyLink&appuid=5c73508e000000001002bb12&apptime=1710418804";
