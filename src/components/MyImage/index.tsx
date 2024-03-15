@@ -4,11 +4,12 @@ import useImageSrc from "@/hooks/useImageSrc";
 
 interface MyImageProps {
   src: string;
-  width?: number;
-  height?: number;
+  width?: number | "auto";
+  height?: number | "auto";
   showBgColor?: boolean;
   noCover?: boolean;
   centerTop?: boolean; // 图片整体位置左右居中，从上到下，默认为false，上下左右都居中
+  coverType?: "width" | "height"; // 图片按照满宽度或满高度进行自动铺满
   onClick?: () => void;
   className?: string;
   style?: Record<string, any>;
@@ -17,11 +18,12 @@ interface MyImageProps {
 const MyImage = (props: MyImageProps) => {
   const {
     src,
-    width = 0,
-    height = 0,
+    width = "auto",
+    height = "auto",
     showBgColor = false,
     noCover = false,
     centerTop = false,
+    coverType,
     className = "",
     style = {},
     onClick,
@@ -64,8 +66,8 @@ const MyImage = (props: MyImageProps) => {
               ? centerTop
                 ? { width: `${width}px`, height: "auto" }
                 : {
-                    width: `${width}px`,
-                    height: `${height}px`,
+                    width: coverType === "height" ? "auto" : `${width}px`,
+                    height: coverType === "width" ? "auto" : `${height}px`,
                     objectFit: "cover",
                   }
               : {}

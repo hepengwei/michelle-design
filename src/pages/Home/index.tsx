@@ -16,6 +16,7 @@ import {
   THAT_PAGE_URL,
   RECEIVE_THAT_KEY,
 } from "constants/common";
+import { useGlobalContext } from "hooks/useGlobalContext";
 import useMessage from "hooks/useMessage";
 import useGoogleAnalytics from "hooks/useGoogleAnalytics";
 import Header from "components/Header";
@@ -27,11 +28,16 @@ const Home = () => {
     useGoogleAnalytics();
   }
   const containerContentRef = useRef<HTMLDivElement>(null);
+  const { setScrollTop, setScrollContentRef } = useGlobalContext();
   const contentRoutes = useRoutes(contentRoutesConfig);
   const [search] = useSearchParams();
   const location = useLocation();
   const navigate = useNavigate();
   useMessage(THAT_PAGE_URL, RECEIVE_THAT_KEY);
+
+  const onScroll = () => {
+    setScrollTop(containerContentRef.current?.scrollTop);
+  };
 
   useEffect(() => {
     const { pathname } = location;
@@ -43,18 +49,23 @@ const Home = () => {
         navigate("/login");
       }
     } else {
-      if (containerContentRef.current) {
-        (containerContentRef.current as HTMLDivElement).scrollTop = 0;
-      }
       if (!pathname || pathname === "/") {
         navigate(DEFAULT_PAGE_URL);
       }
     }
   }, [location]);
 
+  useEffect(() => {
+    setScrollContentRef(containerContentRef);
+  }, []);
+
   return (
     <div className={styles.container}>
-      <div className={styles.container_content} ref={containerContentRef}>
+      <div
+        className={styles.container_content}
+        onScroll={onScroll}
+        ref={containerContentRef}
+      >
         {location && showHeaderPaths.includes(location.pathname) && <Header />}
         {contentRoutes}
       </div>

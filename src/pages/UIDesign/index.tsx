@@ -1,8 +1,10 @@
 /**
  * UI设计页
  */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import Viewer from "react-viewer";
+import { useGlobalContext } from "hooks/useGlobalContext";
 import { IMG_PREFIX } from "constants/common";
 import Banner from "components/Banner";
 import ModuleTitle from "components/ModuleTitle";
@@ -46,12 +48,34 @@ const iconsImages = iconsList.map((url: string) => ({
 }));
 
 const UIDesign = () => {
+  const [search] = useSearchParams();
+  const { setScrollTop } = useGlobalContext();
   const [activeIndex1, setActiveIndex1] = useState(0);
   const [viewerShow1, setViewerShow1] = useState(false);
   const [activeIndex2, setActiveIndex2] = useState(0);
   const [viewerShow2, setViewerShow2] = useState(false);
   const [activeIndex3, setActiveIndex3] = useState(0);
   const [viewerShow3, setViewerShow3] = useState(false);
+
+  useEffect(() => {
+    if (search && search.get("scrollTo")) {
+      switch (search.get("scrollTo")) {
+        case "pcTerminal":
+          setScrollTop(300);
+          break;
+        case "mobileTerminal":
+          setScrollTop(860);
+          break;
+        case "icons":
+          setScrollTop(1220);
+          break;
+        default:
+          setScrollTop(0);
+      }
+    } else {
+      setScrollTop(0);
+    }
+  }, []);
 
   return (
     <div className={styles.container}>

@@ -1,12 +1,13 @@
 /**
  * 首页
  */
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Skeleton } from "antd";
 import { DoubleRightOutlined, PlayCircleFilled } from "@ant-design/icons";
-import { IMG_PREFIX } from "constants/common";
+import { IMG_PREFIX, VIDEO_ADDRESS } from "constants/common";
 import useAuth from "hooks/useAuth";
+import { useGlobalContext } from "hooks/useGlobalContext";
 import useImageSrc from "hooks/useImageSrc";
 import MyImage from "components/MyImage";
 import ModuleTitle from "components/ModuleTitle";
@@ -43,6 +44,7 @@ const videoProduction3 = `${prefix}videoProduction3.png`;
 
 const Main = () => {
   useAuth();
+  const { setScrollTop } = useGlobalContext();
   const bgSrc = useImageSrc(bg);
   const bannerBgSrc = useImageSrc(bannerBg);
   const uiDesign1Src = useImageSrc(uiDesign1);
@@ -50,6 +52,14 @@ const Main = () => {
   const uiDesign3Src = useImageSrc(uiDesign3);
 
   const navigate = useNavigate();
+
+  const openVideoAddress = () => {
+    window.open(VIDEO_ADDRESS, "_blank");
+  };
+
+  useEffect(() => {
+    setScrollTop(0);
+  }, []);
 
   return (
     <div
@@ -178,7 +188,7 @@ const Main = () => {
               <div
                 className={styles.topFloor}
                 onClick={() => {
-                  navigate("/eCommerceDesign");
+                  navigate("/eCommerceDesign?scrollTo=shopHomepage");
                 }}
               >
                 <MyImage src={eCommerceDesign1} width={340} height={420} />
@@ -193,7 +203,7 @@ const Main = () => {
                 <div
                   className={styles.topFloor}
                   onClick={() => {
-                    navigate("/eCommerceDesign");
+                    navigate("/eCommerceDesign?scrollTo=banner");
                   }}
                 >
                   <MyImage src={eCommerceDesign2} width={400} height={170} />
@@ -207,7 +217,7 @@ const Main = () => {
                 <div
                   className={styles.topFloor}
                   onClick={() => {
-                    navigate("/eCommerceDesign");
+                    navigate("/eCommerceDesign?scrollTo=masterMap");
                   }}
                 >
                   <MyImage src={eCommerceDesign3} width={400} height={170} />
@@ -222,7 +232,7 @@ const Main = () => {
               <div
                 className={styles.topFloor}
                 onClick={() => {
-                  navigate("/eCommerceDesign");
+                  navigate("/eCommerceDesign?scrollTo=detail");
                 }}
               >
                 <MyImage src={eCommerceDesign4} width={340} height={420} />
@@ -249,7 +259,7 @@ const Main = () => {
                 <div
                   className={styles.shadowBox}
                   onClick={() => {
-                    navigate("/graphicDesign");
+                    navigate("/graphicDesign?scrollTo=poster");
                   }}
                 >
                   <MyImage src={graphicDesign1} width={440} height={450} />
@@ -264,7 +274,7 @@ const Main = () => {
                   <div
                     className={styles.shadowBox}
                     onClick={() => {
-                      navigate("/graphicDesign");
+                      navigate("/graphicDesign?scrollTo=productBrochure");
                     }}
                   >
                     <MyImage src={graphicDesign2} width={610} height={190} />
@@ -279,7 +289,7 @@ const Main = () => {
                     <div
                       className={styles.shadowBox}
                       onClick={() => {
-                        navigate("/graphicDesign");
+                        navigate("/graphicDesign?scrollTo=rollUpBanner");
                       }}
                     >
                       <MyImage src={graphicDesign3} width={265} height={190} />
@@ -293,7 +303,7 @@ const Main = () => {
                     <div
                       className={styles.shadowBox}
                       onClick={() => {
-                        navigate("/graphicDesign");
+                        navigate("/graphicDesign?scrollTo=cultureWall");
                       }}
                     >
                       <MyImage src={graphicDesign4} width={265} height={190} />
@@ -320,7 +330,7 @@ const Main = () => {
               <div
                 className={styles.topBox}
                 onClick={() => {
-                  navigate("/uiDesign");
+                  navigate("/uiDesign?scrollTo=pcTerminal");
                 }}
               >
                 {uiDesign1Src ? (
@@ -348,7 +358,7 @@ const Main = () => {
               <div
                 className={styles.topBox}
                 onClick={() => {
-                  navigate("/uiDesign");
+                  navigate("/uiDesign?scrollTo=mobileTerminal");
                 }}
               >
                 {uiDesign2Src ? (
@@ -376,7 +386,7 @@ const Main = () => {
               <div
                 className={styles.topBox}
                 onClick={() => {
-                  navigate("/uiDesign");
+                  navigate("/uiDesign?scrollTo=icons");
                 }}
               >
                 {uiDesign3Src ? (
@@ -412,7 +422,7 @@ const Main = () => {
             toUrl=""
           />
           <div className={styles.box}>
-            <div className={styles.itemBox}>
+            <div className={styles.itemBox} onClick={openVideoAddress}>
               <MyImage
                 src={videoProduction1}
                 width={380}
@@ -421,7 +431,7 @@ const Main = () => {
               />
               <PlayCircleFilled />
             </div>
-            <div className={styles.itemBox}>
+            <div className={styles.itemBox} onClick={openVideoAddress}>
               <MyImage
                 src={videoProduction2}
                 width={380}
@@ -430,7 +440,7 @@ const Main = () => {
               />
               <PlayCircleFilled />
             </div>
-            <div className={styles.itemBox}>
+            <div className={styles.itemBox} onClick={openVideoAddress}>
               <MyImage
                 src={videoProduction3}
                 width={380}

@@ -1,8 +1,10 @@
 /**
  * 电商设计页
  */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import Viewer from "react-viewer";
+import { useGlobalContext } from "hooks/useGlobalContext";
 import useImageSrc from "hooks/useImageSrc";
 import { IMG_PREFIX } from "constants/common";
 import Banner from "components/Banner";
@@ -79,6 +81,8 @@ const detailImages = detailList.map((url: string) => ({
 
 const ECommerceDesign = () => {
   const bgSrc = useImageSrc(bg);
+  const [search] = useSearchParams();
+  const { setScrollTop } = useGlobalContext();
   const [activeIndex1, setActiveIndex1] = useState(0);
   const [viewerShow1, setViewerShow1] = useState(false);
   const [activeIndex2, setActiveIndex2] = useState(0);
@@ -87,6 +91,29 @@ const ECommerceDesign = () => {
   const [viewerShow3, setViewerShow3] = useState(false);
   const [activeIndex4, setActiveIndex4] = useState(0);
   const [viewerShow4, setViewerShow4] = useState(false);
+
+  useEffect(() => {
+    if (search && search.get("scrollTo")) {
+      switch (search.get("scrollTo")) {
+        case "shopHomepage":
+          setScrollTop(300);
+          break;
+        case "banner":
+          setScrollTop(1450);
+          break;
+        case "masterMap":
+          setScrollTop(2220);
+          break;
+        case "detail":
+          setScrollTop(3120);
+          break;
+        default:
+          setScrollTop(0);
+      }
+    } else {
+      setScrollTop(0);
+    }
+  }, []);
 
   return (
     <div

@@ -12,9 +12,10 @@ const padding = 30;
 interface BorderBoxProps {
   url: string;
   borderType: number;
-  width: number;
-  height: number;
-  centerTop?: boolean;
+  width?: number;
+  height?: number;
+  centerTop?: boolean; // 图片整体位置左右居中，从上到下，默认为false，上下左右都居中
+  coverType?: "width" | "height"; // 图片按照满宽度或满高度进行自动铺满
   onClick?: () => void;
   className?: string;
 }
@@ -26,6 +27,7 @@ const BorderBox2 = (props: BorderBoxProps) => {
     width,
     height,
     centerTop = false,
+    coverType,
     className,
     onClick,
   } = props;
@@ -53,17 +55,18 @@ const BorderBox2 = (props: BorderBoxProps) => {
       style={{
         backgroundImage: `url("${borderImg}")`,
         backgroundSize: "cover",
-        width,
-        height,
+        width: width || "auto",
+        height: height || "auto",
         cursor: onClick ? "pointer" : "noset",
       }}
       onClick={() => onClick?.()}
     >
       <MyImage
         src={url}
-        width={width - padding * 2}
-        height={height - padding * 2}
+        width={width ? width - padding * 2 : "auto"}
+        height={height ? height - padding * 2 : "auto"}
         centerTop={centerTop}
+        coverType={coverType}
       />
     </div>
   );
